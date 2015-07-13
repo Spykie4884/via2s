@@ -117,7 +117,6 @@
 
 <div id="content">
 	<div id="content_item">
-		<center><h3>Liste de devis</h3></center>
 		<br/>
 		<br/>
 		<center>
@@ -142,17 +141,12 @@
 					</tr>
 					<tr>
 						<td style="text-align:center; font-weight: bold;">
-							<input id="submit" type="submit" value="rechercher_produit" name="rechercher_produit">
+							<input id="submit" type="submit" value="rechercher devis" name="rechercher_devis">
 						</td>
 					</tr>
 				</table>
 			</form>
 		</center>
-<div id="content">
-	<div id="content_item">
-		<center><a href='ajout_produits.php'>Ajout de produits</a></center>
-	</div>
-</div>
 <?php
 	//}
 ?>

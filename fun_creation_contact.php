@@ -18,10 +18,10 @@
 		echo 'Yaka pas connecté';
 	}
 	//$_SESSION['user_statut'] = 'visiteur';
-	$_SESSION['user_statut'] = 'super-administrateur';
+	//$_SESSION['user_statut'] = 'super-administrateur';
 	if(isset($_POST['user_email']))
 	{
-		$test = $bdd->prepare("SELECT * FROM utilisateurs WHERE user_email = '".$_POST['user_email']."'");
+		$test = $bdd->prepare("SELECT * FROM utilisateurs WHERE user_email = '" . $_POST['user_email'] . "'");
 		$test->execute();
 		if($test->rowCount())
 		{

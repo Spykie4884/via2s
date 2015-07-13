@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 	include('BDD_Connexion.php');
 	if( (isset($_POST['user_emaillog'])) && (isset($_POST['user_mdp'])) )
 	{
@@ -8,7 +8,7 @@
 		}
 		catch (Exception $e)
 		{
-			echo ("BDD pas connecté");
+			echo ("BDD pas connectÃ©");
 		}
 		try
 		{
@@ -16,7 +16,7 @@
 		}
 		catch (Exception $e)
 		{
-			echo 'Yaka pas connecté';
+			echo 'Yaka pas connectÃ©';
 		}
 		$requete = $bdd->query('SELECT * FROM utilisateurs WHERE user_email="' . $_POST['user_emaillog'] . '"');
 		$donneex = $requete->fetch();
@@ -98,15 +98,15 @@
 		<script type="text/javascript">
 			function initialiser() {
 			var latlng = new google.maps.LatLng(48.655320, 2.380900);
-			//objet contenant des propriétés avec des identificateurs prédéfinis dans Google Maps permettant
-			//de définir des options d'affichage de notre carte
+			//objet contenant des propriÃ©tÃ©s avec des identificateurs prÃ©dÃ©finis dans Google Maps permettant
+			//de dÃ©finir des options d'affichage de notre carte
 			var options = {
 			center: latlng,
 			zoom: 15,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 
-			//constructeur de la carte qui prend en paramêtre le conteneur HTML
+			//constructeur de la carte qui prend en paramÃªtre le conteneur HTML
 			//dans lequel la carte doit s'afficher et les options
 			var carte = new google.maps.Map(document.getElementById("carte"), options);
 
