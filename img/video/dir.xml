@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- dir2xml version 1.1 created by [mck] -->
+<!-- For more information goto www.matthijskamstra.nl/blog/ -->
+
+<!-- This document was created on 22-8-2006 (10:52:6) -->
+
+<folder name="video" path="img\video">
+	<file name="video_02.gif" path="img/video/video_02.gif" filesize="" filesize_kb="" filesize_bytes="" creationdate="" />
+	<file name="video_03.gif" path="img/video/video_03.gif" filesize="" filesize_kb="" filesize_bytes="" creationdate="" />
+	<file name="video_04.gif" path="img/video/video_04.gif" filesize="" filesize_kb="" filesize_bytes="" creationdate="" />
+	<file name="video_05.gif" path="img/video/video_05.gif" filesize="" filesize_kb="" filesize_bytes="" creationdate="" />
+	<file name="video_06.gif" path="img/video/video_06.gif" filesize="" filesize_kb="" filesize_bytes="" creationdate="" />
+	<file name="video_07.gif" path="img/video/video_07.gif" filesize="" filesize_kb="" filesize_bytes="" creationdate="" />
+	<file name="video_06.gif" path="img/video/video_08.gif" filesize="" filesize_kb="" filesize_bytes="" creationdate="" />
+	<file name="video_07.gif" path="img/video/video_09.gif" filesize="" filesize_kb="" filesize_bytes="" creationdate="" />
+</folder>

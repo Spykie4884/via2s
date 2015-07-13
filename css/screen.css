@@ -1,0 +1,442 @@
+/*
+	Date de création :	10/02/2006 
+	Auteur :			
+	Contact :			
+*/
+
+@media screen {
+	/* Affichage commun */
+	
+	div#contener {
+		position: ABSOLUTE;
+		clear:both;
+		left: 50%;
+		top: 2px;
+		width:750px;
+		height:550px;
+		border: 1px solid #ffffff;	/*bleu : #0863CE ou blanc :#FFFFFF*/
+		margin-left: -380px;
+		color:#000000;
+		background-color:#FFFFFF;
+	}	
+	div#bandeau {
+		position:absolute;
+		top:0px;
+		left:0px;
+		width:748px;
+		height:50px;
+	}
+	
+	div#menu {
+		position:absolute;
+		top:-50px;
+		left:12px;
+	}
+
+	div#menu_gauche {
+		position: absolute;
+		top: -79px;
+		left: 12px;
+	}
+	
+	/* accroche du site  : << Video Intrusion Acces Supervision Services >> sur toutes les pages du site sauf l'index, accroche en-dessous des sous menus */
+	div#accroche_site {
+		position: absolute;
+		top: 340px;
+		left: 5px;
+		font-family:Arial black, Verdana,Helvetica, sans-serif;
+		font-size:14px;
+		color:#FFFFFF;	
+		text-align:justify;
+	}
+	
+	/* Informations de login */
+	div#info_login {
+		position: absolute;
+		top: 25px;
+		left: 10px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:8pt;
+		color:#0863CE;	
+		text-align:justify;
+	}
+	
+	div#content {
+		position: absolute;
+		left: 0px;
+		top: 51px;
+		width:750px;
+		height:478px;
+		border-bottom: 1px solid #ffffff; /*bleu : #0863CE ou blanc :#FFFFFF*/
+		background-image: url(../img/fond.jpg); 
+	}
+	div#presentation {
+		position: absolute;
+		left: 0px;
+		top: 25px;
+		width:730px;
+		height:200px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+		text-align:center;
+	}
+	
+	div#diapo_1 {
+		position: absolute;
+		left: 4px;
+		top: 34px;
+		width:200px;
+		height:200px;
+		z-index:2;
+	}
+	div#diapo_2 {
+		position: absolute;
+		left: 4px;
+		top: 239px;
+		width:200px;
+		height:200px;
+		z-index:2;
+	}
+	div#diapo_3 {
+		position: absolute;
+		left: 546px;
+		top: 34px;
+		width:200px;
+		height:200px;
+		z-index:3;
+	}
+	div#diapo_4 {
+		position: absolute;
+		left: 546px;
+		top: 239px;
+		width:200px;
+		height:200px;
+		z-index:4;
+	}	
+	div#news {
+		position: absolute;
+		top: 34px;
+		left: 208px;
+		width:332px;
+		height:405px;
+		border: 1px solid #ffffff; /*cadre noir : #000000 ou blanc : #ffffff ou bleu :#0863CE*/
+		background-color:#FFFFFF;
+		/*padding:5px 5px 5px 5px;*/
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:14px;
+		font-weight:bold;
+		color:#0863CE;
+		text-align:JUSTIFY;
+		overflow:auto;
+	}
+	
+	div#img_index {
+		position: absolute;
+		top: 205px;
+		left: 365px;
+		z-index:=1;
+	}
+
+	div#chemin_page {
+		position: absolute;
+		top:440px;
+		left:128px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#FFFFFF;
+	}
+	
+	div#texte_bas {
+		position: absolute;
+		top:444px;
+		left:25px;
+		width:700px;
+		height:10px;
+		font-family:Arial black, Verdana, Helvetica, sans-serif;
+		font-size:19px;
+		font-weight:bold;
+		color:#FFFFFF;
+		text-align:center;
+	}
+	
+	div#mentions_legales {
+		position: absolute;
+		top: 477px;
+		left: 0px;
+		width:748px;
+		height:20px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#0863CE;
+		border: 1px solid #ffffff;
+		background-color:#FFFFFF;
+	}	
+
+	div#mail{
+		position:absolute;
+		top: 27px;
+		left: 128px;
+		width:616px;
+		height:410px;
+		border: 1px solid #FFFFFF;
+		/*padding:20px 20px 20px 20px;*/
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+	}
+
+	div#adresse{
+		position:absolute;
+		top:10px;
+		left:40px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+		text-align:center;
+	}
+	
+	div#img_mail {
+		position: absolute;
+		top: 0px;
+		left: 300px;
+	}
+	
+	div#num_tel{
+		position:absolute;
+		top: 280px;
+		left: 7px;
+		width:400px;
+		height:50px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+		text-align:justify;
+	}
+
+	div#activite {
+		position: absolute;
+		top: 27px;
+		left: 20px;
+		width:700px;
+		height:220px;
+		border: 1px solid #FFFFFF;
+		background-color:#FFFFFF;
+		/*padding:5px 5px 5px 5px;*/
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+		text-align:justify;
+		overflow:auto;
+	}
+
+	div#cadre_blanc {
+		position: absolute;
+		top: 27px;
+		left: 128px;
+		width:616px;
+		height:410px;
+		border: 1px solid #FFFFFF;
+		background-color:#FFFFFF;
+		
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#0863CE;
+		text-align:justify;
+		overflow:auto;
+		background-color:#ffffff;
+	}
+	
+		div#txt_cadre {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		width:580px;
+		height:370px;
+	}
+	
+		div#titre_vert {
+		font-family:Arial black, Arial, Verdana, Helvetica, sans-serif;
+		font-size:24px;
+		font-weight:bold;
+		text-align:center;
+		color:#339933;
+		border: 1px solid #339933;
+	}
+		div#sous_titre_vert {
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:20px;
+		font-weight:bold;
+		color:#339933;
+	}
+		div#cadre_service_com
+		{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		
+		div#txt_service_com
+		{
+			position: absolute;
+			top: 60px;
+			left: 80px;	
+			width:450px;
+			height:300px;													
+		}
+				
+		div#cadre_service_tech
+		{
+			position: absolute;
+			top: 130px;
+			left: 10px;
+		}
+
+		div#txt_service_tech
+		{
+			position: absolute;
+			top: 60px;
+			left: 80px;		
+			width:400px;
+		}
+
+		div#cadre_service_adm
+		{
+			position: absolute;
+			top: 270px;
+			left: 10px;
+		}
+		
+		div#txt_service_adm
+		{
+			position: absolute;
+			top: 60px;
+			left: 80px;
+			width:400px;								
+		}		
+		
+		div#champ_mobile
+		{
+			position: absolute;
+			top: 0px;
+			left: 200px;		
+		}
+
+		div#champ_mail
+		{
+			position: absolute;
+			top: 0px;
+			left: 320px;		
+		}
+		
+		th.check
+		{
+			font-family:Arial, Verdana, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			color:#0863CE;
+			text-align:center;
+		}
+		
+		td.checker
+		{
+			font-family:Arial, Verdana, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			color:#0863CE;
+			text-align:left;
+		}
+		
+		td.check
+		{
+			font-family:Arial, Verdana, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			color:#0863CE;
+			text-align:center;
+		}
+		
+		tr.smalltitre
+		{
+			font-family:Arial, Verdana, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			color:#0863CE;
+			text-align:center;
+		}
+		
+		tr.small
+		{
+			font-family:Arial, Verdana, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			color:#0863CE;
+			text-align:center;
+		}
+}
+
+
+/* temporaire */
+.mention_legal{
+
+top:0px ;
+ left:0px ;
+ width:250px ;
+ height:20px ;
+ position:absolute;
+}
+.mention_legal2{
+top:0px ;
+ left:42% ;
+ width:200px ;
+ height:20px ;
+ position:absolute;
+}
+
+.mention_legal3{
+top:0px ;
+ right:0px ;
+ width:126px ;
+ height:20px ;
+ position:absolute;
+}
+
+.red{
+	color : red;
+}
+
+
+.contact_form_haut_gauche{
+POSITION: relative;
+
+
+}
+.intitule{
+DISPLAY : inline;
+POSITION: relative;
+LEFT: 33px; 
+WIDTH: 151px; 
+TOP: 63px; 
+HEIGHT: 19px;
+font-size : 13px;
+}
+
+.contact_formulaires{
+DISPLAY : inline;
+POSITION: relative;
+LEFT: 103px; 
+HEIGHT: 19px;
+}
+
+.image_limite{
+min-height:20px;
+min-width:20px";
+}

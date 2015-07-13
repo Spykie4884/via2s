@@ -1,0 +1,1293 @@
+/*
+	CSS VIA2S
+	Date de création :	28/05/08
+	Date de modification : 
+	Auteurs : YoM
+	Contact :		
+
+*/
+/********GENERALITE*********/
+body{
+margin : 0px;
+padding : 0px;
+
+}
+.general{
+margin-bottom :  40px;
+}
+ul,li{
+list-style-type: none;
+
+}
+h4 {
+	font-size: 1.1em;
+	font-family: verdana;
+	text-align: center;
+	margin: 2px;
+	padding: 0;
+}
+
+img{
+border: 0;
+}
+.bigText{
+font-size : 16px;
+}
+.pair{
+background : #ffefff
+}
+.impaire{
+background : #eeeeee;
+}
+.modifie{
+background : #9999FF;
+
+}
+.erreur404_img{
+height : 30px;
+width :100%;
+margin : 0 auto;
+background-image : url('/img/via2s.JPG');
+background-repeat : no-repeat;
+color : white;
+font-size : 24px;
+
+}
+
+
+.erreur_display{
+
+height : 50px;
+margin : 20px;
+width : 740px;
+}
+/*
+.contener{
+margin-left : 15px;
+font-size : 12px;
+}
+*/
+.padding{
+padding : 10px;
+
+}
+.padding_top{
+padding-top : 10px;
+}
+
+.texte_a_droite {
+	text-align: right;
+}
+
+.texte_a_gauche {
+	text-align: left;
+}
+
+.table_bordure_int{
+	width: 80%;
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+
+.table_bordure_int th, td{
+	border: 2px ridge #6699FF;
+	text-align: center;
+}
+
+.table_bordure_row{
+	margin: 0 auto;
+}
+
+.table_bordure_row th, td{
+	border: none;
+}
+
+
+/***************** TABLEAU  ******************/
+.tableau{
+position : relative;
+width : 700px;
+color : #000000;
+font-weight : 100;
+font-size : 12px;
+border : 0px;
+}
+
+.tab {
+border-spacing : 0px;
+border-collapse: collapse;
+text-align : right;
+border : 0px;
+border: 1px solid black;
+}
+.tab td{
+border-right : 1px solid black;
+padding : 4px 2px 0px 2px;
+}
+tab div{
+background :#000000;
+}
+.titre{
+font-family:Arial black, Arial, Verdana, Helvetica, sans-serif;
+font-size:24px;
+font-weight:bold;
+text-align:center;
+color:#339933;
+border: 1px solid #339933;
+background-color : #ffffff;
+margin : 10px 15px 10px 0px; /* le dernier est à 0 car on à déjà un margin-left à 15 sur le "contener" */
+width : auto;
+
+
+z-index : 1;
+
+}
+.center{
+padding-left : 40px;
+}
+.tete{
+background : #dfdfdf;
+}
+
+.tete th{
+z-index :-1;
+border-right : 1px solid black;
+border-top : 1px solid black;
+border-bottom : 1px solid black;
+text-align : center;
+padding : 4px 2px 0px 2px;
+}
+.debut_tete{
+border-left : 1px solid black;
+border-right : 1px solid black;
+text-align : left;
+font-weight : bold;
+}
+.debut{
+border-left : 1px solid black;
+border-right : 1px solid black;
+text-align : left;
+font-weight : lighter;
+}
+.totaux.prix{
+margin-top : 5px;
+border-bottom : 1px solid black;
+
+}
+
+.prixht{
+width : 65px;
+text-align : right;
+border-right : 1px solid black;
+
+}
+.qte{
+margin-left : 2px;
+width : 25px;
+text-align : center;
+}
+.sous_total{
+background : #eeeeee;
+font-weight : bold;
+}
+.total_debut{
+border-top : 1px solid black;
+}
+.total_fin{
+margin-top : 5px;
+border-bottom : 1px solid black;
+border-left : 1px solid black;
+}
+
+
+.totaux.design{
+margin-top : 5px;
+border-bottom : 1px solid black;
+border-left : 1px solid black;
+border-right : 1px solid black;
+}
+.design{
+border-bottom :0px solid black; /* sous IE6 une border etait créé en dessous de chaque */
+}
+.total_prix{
+text-align : left;
+font-weight : bold;
+border : 0px solid;
+border-right : 1px solid black;
+padding : 0px;
+}
+.total_prix td{
+border-right : 0px solid;
+padding : 0px;
+}
+.total_prix> td.debut{
+border-right: 1px solid black;
+}
+
+
+
+
+.designation{
+border-right : 1px solid black;
+text-indent : 30px;
+text-align : justify;
+width : 350px;
+}
+
+
+
+.none{
+border-left : 1px solid black;
+}
+
+
+.niveau{
+border-right : 1px solid black;
+text-align : left;
+font-weight : bold;
+
+}
+.famille{
+border-right : 1px solid black;
+text-align : left;
+text-decoration : underline;
+text-indent : 10px;
+}
+
+.erreur{
+color : red;
+}
+.historique{
+padding : 0px;
+}
+/***************** FIN TABLEAU  ******************/
+.liste{
+height : 27px;
+padding : 10px 0px 0px 0px;
+z-index : 1;
+}
+
+/***********Hack pour IE6 et IE5 non interprété par les autres******************/
+/* permet de palier à la non compréhension de IE de position : fixed. Ne permet pas de faire fonctionner
+correctement l'entete volante, mais la place mieu que si on ne le met pas */
+* html .liste_fixed{
+position : absolute;
+margin : 0px 0px 0px 0px;
+z-index : 2;
+}
+
+.liste_fixed ul div{
+cursor :pointer;
+background-image : url('/img/barre.jpg');
+background-repeat:repeat;
+}
+
+.liste  ul div{
+cursor :pointer;
+background-image : url('/img/barre.jpg');
+background-repeat:repeat;
+}
+
+
+/********************* corps correspond au corps des pages devis *********************/
+.corps li{
+height : 20px;
+width: 450px;
+color : #000000;
+text-align : justify;
+display : block;
+cursor :pointer;
+}
+
+.corpsAdmin li{
+height : 20px;
+width: 540px;
+color : #000000;
+text-align : justify;
+display : block;
+cursor :pointer;
+}
+
+.corps li a:hover {
+height : 20px;
+width : 440px;
+background :#9999ff;
+display : block;
+padding :10px auto;
+/* si le premier argument est supérieur à 0, l'affichage est lérgement modifié (d'un px vers le bas) lors du survol */
+}
+
+.corpsAdmin li a:hover {
+height : 20px;
+width : 590px;
+background :#9999ff;
+display : block;
+padding :10px auto;
+/* si le premier argument est supérieur à 0, l'affichage est lérgement modifié (d'un px vers le bas) lors du survol */
+}
+
+.corps a{
+text-decoration : none;
+}
+.corps{
+position : relative;
+padding-top : 0px;
+
+}
+/*
+.corps form input[type=submit]{
+background-color : #ffffff;
+color : blue;
+border : 0px;
+cursor : pointer;
+font-family:Arial, Verdana, Helvetica, sans-serif;
+font-size:12px;
+font-weight:bold;
+text-decoration:underline; 
+}
+.corps form input[type=submit]:hover{
+color : red;
+}
+*/
+/********************* corps_modele correspond au corps des pages modele *********************/
+.corps_modele li{
+height : 20px;
+width : 300px;
+color : #000000;
+text-align : justify;
+display : block;
+padding : 0px 0px 0px 6px;
+}
+
+.corps_modele_admin li{
+height : 20px;
+width : 450px;
+color : #000000;
+text-align : justify;
+display : block;
+padding : 0px 0px 0px 6px;
+}
+
+.corps_modele li a:hover {
+height : 20px;
+width : 275px;
+background :#9999ff;
+display : block;
+padding : 0px 0px 0px 6px;
+/* si le premier argument est supérieur à 0, l'affichage est lérgement modifié (d'un px vers le bas) lors du survol */
+}
+
+.corps_modele_admin li a:hover {
+height : 20px;
+width : 440px;
+background :#9999ff;
+display : block;
+padding : 0px 0px 0px 6px;
+/* si le premier argument est supérieur à 0, l'affichage est lérgement modifié (d'un px vers le bas) lors du survol */
+}
+
+.corps_modele .corps_modele_admin a{
+text-decoration : none;
+}
+
+.tete_liste{
+
+display : inline;
+float : left;
+padding : 0px 0px 0px 0px;
+height: 20px;
+width : 140px; /* meme taille que le width de .corps span */
+}
+.milieu_liste{
+
+display : inline;
+float : left;
+padding : 0px 0px 0px 0px;
+height: 20px;
+width : 92px; /* meme taille que le width de .corps span */
+}
+/* fin est le span de fin du corps des listes devis modele */
+.fin{
+height : 20px;
+float:left; 
+position:relative;
+width : 80px;
+text-align : justify;
+display : inline;
+padding : 0px 0px 0px 10px;
+}
+.casual{
+height : 20px;
+width : 140px;
+float:left; position:relative;
+text-align : justify;
+display : inline;
+
+}
+
+.action_tete {
+height : 20px;
+float:left; 
+position:relative;
+width : 60px;
+text-align : justify;
+display : inline;
+padding : 0px 0px 0px 10px;
+}
+.action {
+background-color : #ffffff;
+}
+
+.gif span{
+float:left; position:relative;
+width : 100px;
+}
+
+.formulaires  form{
+display : inline;
+
+
+}
+/*
+.formulaires form input[type=submit]{
+border : 0px;
+background-color : #ffffff;
+color : blue;
+font-family:Arial, Verdana, Helvetica, sans-serif;
+font-size:12px;
+font-weight:bold;
+text-decoration : Underline;
+}
+.formulaires form input[type=submit]:hover{
+cursor : pointer;
+color : red;
+}
+*/
+.formulaires_modif{
+width : 200px;
+float : left;
+line-height : 30px;
+}
+.formulaires_modif ul{
+
+}
+
+.historique{
+float:left; position:relative;
+text-align : justify;
+display : inline;
+}
+.cote {
+border : 0px;
+padding : 0px;
+}
+.cote td{
+margin-left : 5px;
+border : 0px;
+}
+.cote th{
+background-image : url('/img/barre.jpg');
+height : 20px;
+}
+
+.gestion li{
+height : 20px;
+width : 250px;
+color : #000000;
+text-align : justify;
+display : block;
+padding : 0px 0px 0px 6px;
+}
+.gestion_niveau{
+height : 20px;
+float:left;
+}
+
+.creation{
+	height : 300px;
+	padding : 10px;
+	text-align : left;
+	line-height : 30px;
+}
+.clear {
+	clear :both;
+	height : 0px;
+	font-size : 0px;
+}
+.progress{
+width : 193px;
+height : 53px;
+line-height : 53px;
+text-align : center;
+background-image : url('/img/fleche.gif');
+background-repeat:no-repeat;
+}
+
+.statut{
+background-color : #eeeeee;
+
+text-align : center;
+width : 600px;
+height : 27px;
+line-height : 15px;
+margin : 10px 0px 0px 0px;
+
+
+}
+.statut_elt{
+/*background-image : url('/img/fleche_milieu2.jpg'); /* A effacer pour le theme 2*/
+/*background-repeat : repeat-x;*/
+float:left;
+width : 148px;
+border-right-width: 2px;
+border-right-style:dotted;
+border-right-color: #76644f;
+padding : 5px 0px 5px 0px;
+}
+.statut_courant{
+background-color : #cccccc;/*A effacer pour le theme 1*/
+float:left;
+width : 148px; 
+height : 17px; /* height de statut  - valeur du padding top et bottom ( 27 - 10 px ici) */
+border-right-width: 2px;
+border-right-style:dotted;
+border-right-color: #76644f;
+padding : 5px 0px 5px 0px;
+/*background-image : url('/img/fleche_milieu3.jpg'); /*A effacer pour le theme 2*/
+/*background-repeat : repeat-x;A effacer pour le theme 2*/
+}
+.statut_courant_fin{
+background-color : #cccccc;
+float:left;
+width : 150px;
+
+padding : 5px 0px 5px 0px;
+/*background-image : url('/img/fleche_milieu3.jpg');/*A effacer pour le theme 2*/
+/*background-repeat : repeat-x;/*A effacer pour le theme 2*/
+}
+
+
+.statut_elt_fin{
+float:left;
+width : 150px;
+padding : 5px 0px 5px 0px;
+/*background-image : url('/img/fleche_milieu2.jpg');/*A effacer pour le theme 2*/
+/*background-repeat : repeat-x;/*A effacer pour le theme 2*/
+}
+.footer{
+
+height : 15px;
+}
+
+.login{
+margin-top : 2px;
+margin-bottom : 10px;
+padding-top : 2px;
+padding-bottom : 2px;
+position : relative;
+float :right;
+font-family:Arial, Verdana, Helvetica, sans-serif;
+color:#0863CE;	
+z-index:2;
+font-size: 8pt;
+
+}
+.login form {
+display : inline;
+float : left;
+
+}
+.login form input {
+height : 12px;
+display : inline;
+line-height : 10px;
+font-size: 8pt;
+width : 80px;
+
+}
+html>body  .login #Submit1{
+height : 20px;
+border : 0px;
+padding : 0px;
+line-height : 10px;
+display : inline;
+cursor: pointer;
+width : 70px;
+font-size : 0px;
+background: url("/img/glass_barre.jpg") no-repeat -1px -2px ;
+}
+
+html>body  .login #Submit1:hover {
+background: url("/img/glass_barre.jpg") no-repeat -1px -22px;
+}
+.login #Submit1{
+height : 18px;
+}
+
+
+.accueil{
+position : relative;
+width : 100%;
+height : 410px;
+
+margin-bottom : 15px;
+}
+.news_admin{
+
+display : inline;
+width : 125px;
+height : 19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+	Date de création :	10/02/2006 
+	Auteur :			
+	Contact :			
+*/
+
+@media screen {
+	/* Affichage commun */
+	
+	div#contener {
+		position: relative;
+		clear:both;
+		margin: 0px auto;
+		width:950px;
+		padding : 0px;
+		/*bleu : #0863CE ou blanc :#FFFFFF*/
+		color:#000000;
+		height : 100%;
+		min-height : 450px;
+	}	
+	
+	
+
+
+	div#menu_gauche {
+		position: absolute;
+		top: -79px;
+		left: 12px;
+	}
+	
+	/* accroche du site  : << Video Intrusion Acces Supervision Services >> sur toutes les pages du site sauf l'index, accroche en-dessous des sous menus */
+	div#accroche_site {
+		position: absolute;
+		bottom : 50px;
+		left: 5px;
+		font-family:Arial black, Verdana,Helvetica, sans-serif;
+		font-size:14px;
+		color:#FFFFFF;	
+		text-align:justify;
+	}
+	
+	/* Informations de login */
+
+	
+
+	div#presentation {
+		position: absolute;
+		left: 0px;
+		top: 25px;
+		width:730px;
+		height:200px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+		text-align:center;
+	}
+	
+	div#diapo_1 {
+		position: relative;
+		left: 4px;
+		
+		width:200px;
+		height:200px;
+		z-index:5;
+	}
+	div#diapo_2 {
+		position: absolute;
+		left: 4px;
+		top: 209px;
+		width:200px;
+		height:200px;
+		z-index:5;
+	}
+	div#diapo_3 {
+		position: absolute;
+		left: 746px;
+		top : 0px;
+		width:200px;
+		height:200px;
+		z-index:5;
+	}
+	div#diapo_4 {
+		position: absolute;
+		left: 746px;
+		top: 209px;
+		width:200px;
+		height:200px;
+		z-index:5;
+	}	
+	div#news {
+		position: absolute;
+		
+		left: 208px;
+		width:532px;
+		height:405px;
+		border: 1px solid #ffffff; /*cadre noir : #000000 ou blanc : #ffffff ou bleu :#0863CE*/
+		background-color:#FFFFFF;
+		/*padding:5px 5px 5px 5px;*/
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:14px;
+		font-weight:bold;
+		color:#0863CE;
+		text-align:JUSTIFY;
+		overflow:auto;
+	}
+	
+	div#img_index {
+		position: absolute;
+		top: 205px;
+		left: 365px;
+		z-index:1;
+	}
+
+	div#chemin_page {
+		position: absolute;
+		top:440px;
+		left:128px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#FFFFFF;
+	}
+	
+	.footer{
+
+		position: relative;
+		top:0px;
+		
+		width:700px;
+		height:30px;
+		font-family:Arial black, Verdana, Helvetica, sans-serif;
+		font-size:19px;
+		font-weight:bold;
+		color:#FFFFFF;
+		text-align:center;
+	}
+	
+	
+	div#mentions_legales {
+		position: relative;
+		/*top : 65px; */
+		
+		width:100%;
+		
+		margin : 0 auto;
+		height:20px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#0863CE;
+		border: 0px solid #ffffff;
+		background-color:#FFFFFF;
+
+	}	
+
+	div#mail{
+		position:absolute;
+		top: 27px;
+		left: 128px;
+		width:616px;
+		height:410px;
+		border: 1px solid #FFFFFF;
+		/*padding:20px 20px 20px 20px;*/
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+	}
+
+	div#adresse{
+		position:absolute;
+		top:10px;
+		left:40px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+		text-align:center;
+	}
+	
+	div#img_mail {
+		position: relative;
+		float : right;
+		top: 0px;
+
+	}
+	
+	div#num_tel{
+		position:absolute;
+		top: 280px;
+		left: 7px;
+		width:400px;
+		height:50px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+		text-align:justify;
+	}
+
+	div#activite {
+		position: absolute;
+		top: 27px;
+		left: 20px;
+		width:700px;
+		height:220px;
+		border: 1px solid #FFFFFF;
+		background-color:#FFFFFF;
+		/*padding:5px 5px 5px 5px;*/
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#000000;
+		text-align:justify;
+		overflow:auto;
+	}
+
+
+	
+		div#txt_cadre {
+		position: absolute;
+
+		left: 10px;
+		width:800px;
+		height:400px;
+		
+	}
+	
+		div#titre_vert {
+		font-family:Arial black, Arial, Verdana, Helvetica, sans-serif;
+		font-size:24px;
+		font-weight:bold;
+		text-align:center;
+		color:#339933;
+		border: 1px solid #339933;
+	}
+		div#sous_titre_vert {
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:20px;
+		font-weight:bold;
+		color:#339933;
+	}
+		div#cadre_service_com
+		{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+		}
+		
+		div#txt_service_com
+		{
+			position: absolute;
+			top: 60px;
+			left: 80px;	
+			width:450px;
+			height:300px;													
+		}
+				
+		div#cadre_service_tech
+		{
+			position: absolute;
+			top: 130px;
+			left: 10px;
+		}
+
+		div#txt_service_tech
+		{
+			position: absolute;
+			top: 60px;
+			left: 80px;		
+			width:400px;
+		}
+
+		div#cadre_service_adm
+		{
+			position: absolute;
+			top: 270px;
+			left: 10px;
+		}
+		
+		div#txt_service_adm
+		{
+			position: absolute;
+			top: 60px;
+			left: 80px;
+			width:400px;								
+		}		
+		
+		div#champ_mobile
+		{
+			position: absolute;
+			top: 0px;
+			left: 200px;		
+		}
+
+		div#champ_mail
+		{
+			position: absolute;
+			top: 0px;
+			left: 320px;		
+		}
+		
+		th.check
+		{
+			font-family:Arial, Verdana, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			color:#0863CE;
+			text-align:center;
+		}
+		
+		td.checker
+		{
+			font-family:Arial, Verdana, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			color:#0863CE;
+			text-align:left;
+		}
+		
+		td.check
+		{
+			font-family:Arial, Verdana, Helvetica, sans-serif;
+			font-size:12px;
+			font-weight:bold;
+			color:#0863CE;
+			text-align:center;
+		}
+		
+	table.table_produits {
+		width: 90%;
+		border: 1px solid #0863CE;
+		border-collapse: collapse; 
+		margin: 10px auto;
+		background: #F5F5FF;
+	}
+	
+	table.table_produits th {
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-weight:bold;
+		font-size: 0.9em;
+		color: #FFFFFF;
+		text-align:center;
+		background: #0863CE;
+	}
+	
+	table.table_produits td {
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size: 0.8em;
+		text-align:center;
+		padding-bottom: 5px;
+	}
+	
+	.table_visible{
+		border: 1px solid #0863CE;
+		border-collapse: collapse; 
+		margin: 10px auto;
+		background: #F5F5FF;
+	}
+	
+	.table_visible th {
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-weight:bold;
+		font-size: 0.9em;
+		color: #FFFFFF;
+		text-align:center;
+		background: #0863CE;
+	}
+	
+	.table_visible td {
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size: 0.8em;
+		text-align:center;
+		padding: 3px 5px 3px 5px;
+	}
+	
+	.table_separee{
+		border: 1px solid #0863CE;
+		border-collapse: collapse; 
+		margin: 10px auto;
+		//background: #F5F5FF;
+	}
+	
+	.table_separee th {
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-weight:bold;
+		//color: #FFFFFF;
+		font-size: 1.1em;
+		text-align:center;
+		padding: 3px 5px 3px 5px;
+		border-top: 1px solid #0863CE;
+		text-align: right;
+		//background: #0863CE;
+	}
+	
+	.table_separee td {
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		text-align: left;;
+		border-top: 1px solid #0863CE;
+		font-size: 0.8em;
+		padding: 3px 5px 3px 5px;
+	}
+		
+	input.bouton_editer{
+		background:url(/img/modifier.GIF) no-repeat;
+		width: 22px;
+		height: 20px;
+		padding: 0;
+		border: 1px dotted #0863CE;
+	}
+	
+	input.bouton_supprimer{
+		background:url(/img/supprimer.GIF) no-repeat;
+		width: 22px;
+		height: 20px;
+		padding: 0;
+		border: 1px dotted #0863CE;
+	}
+	
+	/* Formulaire de modification du mot de passe (visiteur) */
+	.pass_form {
+		width: 70%;
+		border: 1px solid #0863CE;
+		border-collapse: collapse; 
+		margin: 10% auto 5px;
+		background: #F5F5FF;
+	}
+}
+
+
+/* temporaire */
+.mention_legal{
+float : left;
+top:0px ;
+margin-left : 0px;
+ width:33%;
+ height:20px ;
+ position:relative;
+
+}
+.mention_legal2{
+float : left;
+top:0px ;
+margin : 0 auto;
+ width:33%;
+ height:20px ;
+ position:relative;
+ text-align : center;
+
+}
+
+.mention_legal3{
+float : right;
+ position:relative;
+top:0px ;
+margin : auto;
+margin-right : 0px;
+ width:200px;
+ height:20px ;
+ text-align : right;
+
+}
+
+.red{
+	color : red;
+}
+
+
+.contact_form_haut_gauche{
+POSITION: relative;
+
+
+}
+.intitule{
+DISPLAY : inline;
+POSITION: relative;
+LEFT: 33px; 
+WIDTH: 151px; 
+TOP: 63px; 
+HEIGHT: 19px;
+font-size : 13px;
+}
+
+.contact_formulaires{
+DISPLAY : inline;
+POSITION: relative;
+LEFT: 103px; 
+HEIGHT: 19px;
+}
+
+.image_limite{
+min-height:20px;
+min-width:20px;
+}
+
+
+/* Formulaire de contact , flottant */
+
+#contact_form {
+	width: 90%;
+	margin: 20px auto;
+	padding: 5px;
+}
+
+#contact_form_droite { 
+	margin: 0 0 1em 47%;
+	padding: 5px;
+	width: 50%;
+}
+
+#contact_form_gauche { 
+	width: 45%;
+	margin: 0px auto;
+	padding: 5px;
+	float: left;
+	display: inline;
+}
+
+.contact_form_label_col {
+	width: 40%;
+	float: left;
+}
+
+#contact_form p {
+	margin: .5em 0;
+} 
+
+.contact_form_label {
+	display: block;
+	margin: 12px 10px;
+	text-align: right;
+}
+
+.contact_form_txtfield {
+	display: block;
+	text-align: left;
+	margin: 5px 10px;
+}
+
+.contact_form_txtfield_err{
+	display: block;
+	text-align: left;
+	margin: 5px 10px;
+	border: thin solid red;
+	padding: 2px; 
+}
+
+.contact_form_large_div {
+	margin: 0 0 0 19%;
+}
+
+/* Formulaire ajout produit */
+#table_ajout_produit{
+	margin: 10px 10px;
+}
+
+#table_ajout_produit td{
+	padding-top: 5px;
+}
+
+
+/* FORMULAIRES */
+
+.etoile{
+	color: red;
+	font-size: 2;
+	font-family: Verdana, Helvetica, sans-serif;
+}
+
+.legende_rouge {
+	color: red;
+	font-size: 0.8em;
+}
+
+.label{
+	font-family: Verdana, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 1.1em;
+}
+
+.label_err{
+	font-family: Verdana, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 1.1em;
+	color: red;
+}
+
+.txtfield_err{
+	border: thin solid red;
+	padding: 2px; 
+}
+
+.input_err{
+	border: thin solid red;
+	padding: 2px;
+	color: red;
+}
+
+/* Message d'erreur */
+p.message_erreur {
+	color: red;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* Boutons submit de tri */
+input.tri_asc {
+	background: url(/img/ASC.GIF) no-repeat;
+	border: 0;
+	width: 12px;
+	height: 12px;
+	padding: 0;
+	margin: 0;
+}
+
+input.tri_desc {
+	background: url(/img/DESC.GIF) no-repeat;
+	border: 0;
+	width: 12px;
+	height: 12px;
+	padding: 0;
+	margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

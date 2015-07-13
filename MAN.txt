@@ -1,0 +1,39 @@
+﻿NOM_DE_LA_PAGE.php (sans body ou part)
+Contient le squelette de la page(<html></html>,<head></head>,<body></body>).
+Elle inclue:
+	- BDD_Connexion.php,
+	- head.php,
+	- bandeau.php,
+	- menu.php,
+	- sous_menu_groupe.php,
+	- sous_menu_contact.php,
+	- login_part,
+	- body_NOM_DE_LA_PAGE
+	- footer.php
+
+BDD_Connexion.php
+Contient le session_start ainsi que la connexion aux bases de données (bdd et Yaka).
+Met la valeur de $_SESSION['user_statut'] à 'visiteur'.
+
+head.php
+Contient le css et js du site internet.
+
+bandeau.php
+Contient l'animation de la page.
+
+menu.php
+
+sous_menu_groupe.php
+
+sous_menu_contact.php
+
+login_part.php
+
+body_NOM_DE_LA_PAGE.php
+Contient l'ensemble du corps de la page.
+
+footer.php
+Contient le pieds de page (VIA2S Tous droits résérvés, contact@via2s.com et Site édité par VIA2S).
+
+fun_NOM_DE_LA_PAGE.php
+Contient la plus grosse partie du code php ainsi que toutes les fonctions associées à la page.

@@ -1,0 +1,104 @@
+body {
+behavior: url('/csshover.htc');
+	scrollbar-arrow-color:		blue;				/* Couleur des flèches */
+	scrollbar-face-color:		lightgray;			/* Couleur de la barre */
+	scrollbar-track-color:		lightgrey;			/* Couleur de l'arrière-plan */
+	scrollbar-3dlight-color:	darkgray;			/* Ligne du cadre gauche + haut */
+	scrollbar-highlight-color:	white;				/* Ligne du cadre gauche + haut aussi mais en-dessous */
+	scrollbar-shadow-color:		black;				/* Ligne du cadre bas + gauche  + flèches quand 'disabled' */
+	scrollbar-darkshadow-color:	darkgray;			/* Ligne du cadre bas + gauche aussi mais en-dessous */
+}	
+
+div#bandeau {
+		top : 0px; /* place le bandeau à 0 px du top*/ 
+		position:relative;
+		width:950px;
+		height : 50px;
+		background-repeat : no-repeat;
+		z-index : 1;
+		background-color : #ffffff;
+		margin : 0px;
+		padding : 0px;
+		
+	}
+#bandeau_img{
+	top : 0px; /* place le bandeau à 0 px du top*/ 
+	/*background-image : url('img/via2s.jpg');
+	background-repeat : repeat-y;*/
+	height : 100%;
+
+	width:740px;
+	float : left;
+	z-index : 1;
+	background-color : #ffffff;
+	margin : 0px;
+	padding : 0px;
+
+}
+
+
+.titre_fixed{
+font-family:Arial black, Arial, Verdana, Helvetica, sans-serif;
+font-size:24px;
+font-weight:bold;
+text-align:center;
+color:#339933;
+border: 1px solid #339933;
+margin : 10px 15px 10px 0px; /* le dernier est à 0 car on à déjà un margin-left à 15 sur le "contener" */
+width : auto;
+}
+/*
+.corps{
+top : -20px;
+position : relative;
+padding-top : 45px;
+
+}
+*/
+#menu {
+	position: relative;
+	width:940px;
+	left : auto;
+}
+	div#cadre_blanc {
+	
+		position: relative;
+		top : 0px;
+		float : right;
+		margin-right : 10px;
+		margin-bottom : 15px;
+		margin-top : 5px;
+		width:816px;	
+		height : 450px; /* ne fonctionne pas sous IE6 */
+		background-color:#FFFFFF;	
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:12px;
+		font-weight:bold;
+		color:#0863CE;
+		text-align:justify;
+
+		background-color:#ffffff;
+	}
+
+	#content {
+	position: relative;
+	margin : 0px auto;
+	padding : 0px 0px 10px 0px;
+	width:950px;
+	border-bottom: 0px solid #ffffff; /*bleu : #0863CE ou blanc :#FFFFFF*/
+	background-image: url(../img/fond.jpg); 
+	background-repeat :  repeat-x;
+	background-color : #0863CE;
+	height:428px;
+
+
+	}
+	div#info_login {
+		position: absolute;
+		top: 25px;
+		left: 10px;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		font-size:8pt;
+		color:#0863CE;	
+		text-align:justify;
+	}	

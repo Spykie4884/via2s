@@ -1,0 +1,296 @@
+/*div#menu-principal{
+
+    width: 100%;
+
+	border-top: 1px solid #0051BA;
+    font-size: 01.0em;
+    margin: 0;
+    outline: 0 none;
+    padding: 0;
+	color: #ffffff;
+	font-family: Verdana,Arial,sans-serif;
+	line-height: 1.54;
+	height: 30px;
+}
+*/
+div.sousmenu-principal{
+
+
+	width: 100%;
+
+	border-top: 1px solid #0051BA;
+	font-size: 01.0em;
+	margin: 0;
+	outline: 0 none;
+	padding: 0;
+	color: #ffffff;
+	font-family: Arial Black;
+	/*font-family: Verdana,Arial,sans-serif;
+	line-height: 1.54;*/
+/*	height: 15px;*/
+	position: absolute;
+	top: 103px;
+	width: 960px;}
+
+div#bandeau{
+	background:#FFFFFF;
+	height:50px;
+
+
+}
+div#menu-principal{
+	height:35px;
+	width: 900px;
+	 background: none repeat scroll 0 0 #1971C4;
+	color: #FFF;
+	font:  arial black;
+		  font-size: 1.50em;
+	margin:0;
+}
+
+#sousmenu{
+	-moz-border-bottom-colors: none;
+    -moz-border-image: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    /*background: none repeat scroll 0 0 #1971C4;*/
+	/*background: none repeat scroll 0 0 #49A1F4;*/
+	/*background: none repeat scroll 0 0 red;*/
+	background: url(../img/new_site/fond_sous_menu.bmp) repeat-x;
+    border-color: #3783CC #3783CC #1665B0;
+    border-style: solid;
+    border-width: 0;
+    clear: both;
+    /*height: 30px;*/
+	height: 27px;
+    position: relative;
+    width: 100%;
+	margin: 0;
+    padding: 0;
+	line-height: 1.54;
+	z-index: 10;
+}
+/*
+#navigation{
+	top:12px;
+	margin-top : 0px;
+	margin-bottom : 0px;
+
+
+	position : relative;
+	float :left;
+	font-family:Arial, Verdana, Helvetica, sans-serif;
+
+	z-index:10;
+	font-size: 12pt;
+
+	text-align: left;
+	display:block;
+}*/
+.login1{
+	top:12px;
+/*right:21.5%;*/
+		margin-top : 0px;
+		margin-bottom : 0px;
+
+
+		position : relative;
+		float :right;
+		font-family:Arial, Verdana, Helvetica, sans-serif;
+		color:#0863CE;
+		z-index:10;
+		font-size: 8pt;
+
+		text-align: right;
+	display:block;
+}
+.login1 form {
+		display : inline;
+	/*float : left;*/
+
+}
+.login1 form input {
+		height : 12px;
+		display : inline;
+		line-height : 10px;
+		font-size: 8pt;
+		width : 80px;
+
+}
+html>body  .login1 #Submit1{
+		height : 20px;
+		border : 0px;
+		padding : 0px;
+		line-height : 10px;
+		display : inline;
+		cursor: pointer;
+		width : 70px;
+		font-size : 0px;
+		background: url("../img/glass_barre.jpg") no-repeat -1px -2px ;
+		vertical-align: top;
+}
+
+html>body  .login1 #Submit1:hover {
+		background: url("../img/glass_barre.jpg") no-repeat -1px -22px;
+}
+.login1 #Submit1{
+		height : 18px;
+}
+
+#menu div, #sousmenu div {
+	position: relative;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	line-height: 1.54;
+}
+
+#menu ul, .menu-horizontal ul {
+    display: block;
+    float: left !important;
+    font-weight: bold;
+    height: 100%;
+    /*padding: 0 1%;*/
+	margin: 0;
+    position: relative;
+    /*width: 98% !important;*/
+	width: 100% !important;
+	line-height: 1.54;
+}
+
+#sousmenu ul {
+    display: block;
+    float: left !important;
+  /* font-weight: bold;*/
+	font-size:115%;
+    height: 100%;
+    padding: 0 1%;
+	margin: 0;
+    position: relative;
+    /*width: 98% !important;*/
+	width: 100% !important;
+	line-height: 1.54;
+}
+
+ol, ul {
+    list-style: none outside none;
+	line-height: 1.54;
+}
+
+#menu li, .menu-horizontal li, #sousmenu li {
+	position: relative;
+	display: block;
+    float: left;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+	line-height: 1.54;
+	/*width: 80px;*/
+}
+
+#menu li a:link, #menu li a:visited, .menu-horizontal li a {
+    border: medium none !important;
+    color: #AAD2F8;
+    display: block;
+    float: left;
+    height: 100% !important;
+    padding: 0 !important;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    z-index: 2;
+}
+
+#menu li a:hover {
+    border: medium none !important;
+    color: #DDEEFF;
+    display: block;
+    float: left;
+    height: 100% !important;
+    padding: 0 !important;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    z-index: 2;
+}
+
+#sousmenu li a:link, #sousmenu li a:visited, .menu-horizontal li a {
+    border: medium none !important;
+    /*color: #AAD2F8;*/
+	color: white;
+    display: block;
+    float: left;
+    height: 100% !important;
+    padding: 0 !important;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    /*z-index: 2;*/
+}
+
+#sousmenu li a:hover {
+    border: medium none !important;
+    color: #555555;
+    display: block;
+    float: left;
+    height: 100% !important;
+    padding: 0 !important;
+    position: relative;
+    text-align: center;
+    text-decoration: underline;
+    /*z-index: 2;*/
+}
+
+#menu li a span, .menu-horizontal li a span, #sousmenu li a span {
+    float: left;
+    padding: 0 !important;
+    position: relative;
+   /* top: 3px;*/
+    vertical-align: baseline;
+}
+
+.menu-horizontal li a span span {
+    top: 0 !important;
+}
+
+.static .menu-item-text {
+    padding: 2px 0 2px 0;
+	color:#ffffff;
+}
+
+#menu li ul, #sousmenu li ul {
+    /*background: url("/Style Library/Theme/IMAGES/menu-2b.png") repeat-x scroll 0 0 transparent;*/
+	background-color: darkgrey;
+    display: none;
+    float: left !important;
+    font-size: 83.33%;
+    font-weight: normal;
+    height: auto;
+    left: 0 !important;
+    padding: 0 1% !important;
+    position: absolute;
+   /* top: 30px !important;*/
+	/*top: 29px !important;*/
+    width: 100% !important;
+    z-index: 1;
+}
+
+#menu li li, #sousmenu li li {
+    margin: 0 0 0 0;
+    width: auto;
+}
+
+#menu li li a:link, #menu li li a:visited {
+    background: none repeat scroll 0 0 transparent;
+    color: #B1B1B1;
+    line-height: 30px;
+    padding-top: 0;
+}
+
+#menu li ul span {
+    top: 0 !important;
+    white-space: nowrap !important;
+}

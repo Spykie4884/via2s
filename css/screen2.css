@@ -1,0 +1,113 @@
+
+.erreur404{
+background-image : url('/img/via2s.JPG');
+
+}
+body {
+margin: 0;
+padding: 0;
+background: white;
+font: 80% verdana, arial, sans-serif;
+}
+dl, dt, dd, ul, li {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+#menu {
+font-family:Arial, Verdana, Helvetica, sans-serif;
+font-size:11px;
+font-weight:bold;
+position: absolute; /* Menu position that can be changed at will */
+top: 0;
+left: 0;
+z-index:100;
+width : 850px;
+
+}
+#menu ul ,dl{
+background:#0863CE;
+float: left;
+color:#fff;
+}
+
+#menu li {
+color:#fff;
+background:#0863CE;
+text-align: center;
+padding : 8px 4px 8px 10px;
+border : 1px solid #ffffff;
+}
+
+#menu ul li ul li {
+background : #000000;
+}
+#menu li a, dl a{
+color:#fff;
+background:#0863CE;
+text-decoration: none;
+}
+#menu li a:hover, #menu li a:focus, #menu dt a:hover, #menu dt a:focus {
+background:#0863CE;
+color:#fff;
+
+}
+
+
+#smenu1{
+position : aboslute;
+}
+.smenu1{
+width : 90px;
+}
+.smenu1 ul li a{
+width : 100%;
+padding : 0px 0px 0px 0px;
+
+}
+
+.smenu2{
+width : 95px;
+}
+.smenu2  ul li{
+width : 100%;
+padding : 0px 0px 0px 0px;
+}
+.smenu3{
+width : 95px;
+}
+.smenu3  ul li{
+width : 100%;
+padding : 0px 0px 0px 0px;
+}
+#smenu3{
+position : absolute;
+left : 230px;
+top: 80px;
+color : #000000;
+z-index : 50;
+}
+#smenu2{
+position : aboslute;
+z-index : 100;
+}
+#smenu4{
+position : aboslute;
+z-index : 100;
+}
+.smenu4{
+width : 95px;
+z-index : 100;
+}
+.smenu4 ul li{
+width : 100%;
+padding : 0px 0px 0px 0px;
+}
+
+#cadre_menu dl{
+border : 1px solid #ffffff;
+padding : 8px 4px 8px 10px;
+}
+#cadre_menu{
+width : 800px;
+}
