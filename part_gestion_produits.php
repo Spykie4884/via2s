@@ -31,7 +31,7 @@
 				<th class="entete">Nom</th>
 				<th class="entete">Prix à l'unité</th>
 				<th class="entete">Famille</th>
-				<th class="entete">Choisir</th>
+				<th class="entete">Edit</th>
 			</tr>
 			<?php
 			foreach($_POST['options'] as $val)
@@ -80,7 +80,7 @@
 									<th class="entete">Nom</th>
 									<th class="entete">Prix à l'unité</th>
 									<th class="entete">Famille</th>
-									<th class="entete">Choisir</th>
+									<th class="entete">Edit</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -95,6 +95,11 @@
 													<td width='100'>" . $row['prix_publique'] . "</td>
 													<td width='100'>" . $ret['description'] . "</td>
 													<td width='50'>" ;
+								$_SESSION['reference_part_number_produit'] = $row['reference_part_number'];
+								$_SESSION['description_produit'] = $row['description'];
+								$_SESSION['prix_publique_produit'] = $row['prix_publique'];
+								$_SESSION['famille_produit'] = $ret['description'];
+								echo "<a href='edit_produit.php'>A</a>";
 								echo "</td>
 										</tr>";
 								$color = 'impaire';
@@ -111,6 +116,11 @@
 													<td width='100'>" . $row['prix_publique'] . "</td>
 													<td width='100'>" . $ret['description'] . "</td>
 													<td width='50'>" ;
+										$_SESSION['reference_part_number_produit'] = $row['reference_part_number'];
+										$_SESSION['description_produit'] = $row['description'];
+										$_SESSION['prix_publique_produit'] = $row['prix_publique'];
+										$_SESSION['famille_produit'] = $ret['description'];
+										echo "<a href='edit_produit.php'>A</a>";
 										echo "</td>
 												</tr>";
 										$color = 'impaire';
@@ -123,6 +133,11 @@
 													<td width='100'>" . $row['prix_publique'] . "</td>
 													<td width='100'>" . $ret['description'] . "</td>
 													<td width='50'>" ;
+										$_SESSION['reference_part_number_produit'] = $row['reference_part_number'];
+										$_SESSION['description_produit'] = $row['description'];
+										$_SESSION['prix_publique_produit'] = $row['prix_publique'];
+										$_SESSION['famille_produit'] = $ret['description'];
+										echo "<a href='edit_produit.php'>A</a>";
 										echo "</td>
 												</tr>";
 										$color = 'pair';
@@ -156,75 +171,79 @@
 				$_POST['reference']='';
 			}
 		?>
-		<form method="post" action="gestion_produits.php">
-			<br>
-			<table>
-				<tr>
-					<td style="text-align:right; font-weight: bold;">
-						Nom du produit :
-					</td>
-					<td>
-						<input type="text" name="descrip" id="descrip" />
-					</td>
-				</tr>
-				<tr>
-					<td style="text-align:right; font-weight: bold;">
-						Référence :
-					</td>
-					<td>
-						<input type="text" name="reference_part_number" id="reference_part_number" />
-					</td>
-				</tr>
-				<tr>
-					<td style="text-align:right; font-weight: bold;">
-						<label for="famille">Famille :</label>
-					</td>
-					<td>
-						<select name="famille" id="famille">
-							<option value=" "></option>
-							<?php
-							$fami = $Yaka->prepare('SELECT description FROM famille');
-							$fami->execute(array(''));
-							while($ret = $fami->fetch())
-							{
-								echo '<option value="' . $ret['description'] . '">' . $ret['description'] . '</option>';
-							}
-							?>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td style="text-align:right; font-weight: bold;">
-						<label for="niveau">Niveau :</label>
-					</td>
-					<td>
-						<select name="niveau" id="niveau">
-							<option value=" "></option>
-							<?php
-							$sfami = $Yaka->prepare('SELECT description FROM sous_famille');
-							$sfami->execute(array(''));
-							while($ret = $sfami->fetch())
-							{
-								echo '<option value="' . $ret['description'] . '">' . $ret['description'] . '</option>';
-							}
-							?>
-						</select>
-					</td>
-				</tr>
-				<tr>
-					<td style="text-align:right; font-weight: bold;">
-						Référence interne :
-					</td>
-					<td>
-						<input type="text" name="reference" id="reference" />
-					</td>
-				</tr>
-				<tr>
-					<td style="text-align:center; font-weight: bold;">
-						<input id="submit" type="submit" value="rechercher_produit" name="modele_name">
-					</td>
-				</tr>
-			</table>
-		</form>
+		<center>
+			<form method="post" action="gestion_produits.php">
+				<br>
+				<table>
+					<tr>
+						<td style="text-align:right; font-weight: bold;">
+							Nom du produit :
+						</td>
+						<td>
+							<input type="text" name="descrip" id="descrip" />
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right; font-weight: bold;">
+							Référence :
+						</td>
+						<td>
+							<input type="text" name="reference_part_number" id="reference_part_number" />
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right; font-weight: bold;">
+							<label for="famille">Famille :</label>
+						</td>
+						<td>
+							<select name="famille" id="famille">
+								<option value=" "></option>
+								<?php
+								$fami = $Yaka->prepare('SELECT description FROM famille');
+								$fami->execute(array(''));
+								while($ret = $fami->fetch())
+								{
+									echo '<option value="' . $ret['description'] . '">' . $ret['description'] . '</option>';
+								}
+								?>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right; font-weight: bold;">
+							<label for="niveau">Niveau :</label>
+						</td>
+						<td>
+							<select name="niveau" id="niveau">
+								<option value=" "></option>
+								<?php
+								$sfami = $Yaka->prepare('SELECT description FROM sous_famille');
+								$sfami->execute(array(''));
+								while($ret = $sfami->fetch())
+								{
+									echo '<option value="' . $ret['description'] . '">' . $ret['description'] . '</option>';
+								}
+								?>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align:right; font-weight: bold;">
+							Référence interne :
+						</td>
+						<td>
+							<input type="text" name="reference" id="reference" />
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<td style="text-align:center; font-weight: bold;">
+							<input id="submit" type="submit" value="rechercher produit" name="modele_name">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</center>
 	</div>
 </div>

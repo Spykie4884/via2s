@@ -359,10 +359,6 @@
 																													$rechercheniv = $Yaka->prepare('SELECT * FROM sous_famille WHERE niveau LIKE :niveau');
 																													$rechercheniv->execute(array(':niveau' => $_POST['niveau'] . '%'));
 																												}
-																												else
-																												{
-																													echo 'cas pas pris en compte';
-																												}
 																											}
 																										}
 																									}
