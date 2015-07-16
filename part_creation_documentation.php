@@ -1,7 +1,6 @@
 ﻿<div id="menu_vertical">
 	<ul>
 		<?php
-			include('fun_creation_contact.php');
 			include('vmenu_admin.php');
 		?>
 	</ul>
@@ -26,7 +25,7 @@
 				</tr>
 				<tr>
 					<td style="float:right;">
-						<font face="Verdana" size="2">  Catégorie du document : </font>
+						<font face="Verdana" size="2">Catégorie du document : </font>
 					</td>
 					<td>
 						<input type="text" name="categorie" size="41" value="">
@@ -74,42 +73,42 @@
 						<br/>
 						<label>
 							<input type="radio" name="droit" value="FPAI">
-						Fiche produit  "Anti-intrusion"  (FPAI)
+							Fiche produit  "Anti-intrusion"  (FPAI)
 						</label>
 						<br/>
 						<label>
 							<input type="radio" name="droit" value="FPCA">
-Fiche produit    "Contrôle d'accès"  (FPCA)
+							Fiche produit    "Contrôle d'accès"  (FPCA)
 						</label>
 						<br/>
 						<label>
 							<input type="radio" name="droit" value="FPSV">
-						Fiche produit  "Supervision"  (FPSV)
+							Fiche produit  "Supervision"  (FPSV)
 						</label>
 						<br/>
 						<label>
 							<input type="radio" name="droit" value="GA">
-						Guide administrateur  (GA)
+							Guide administrateur  (GA)
 						</label>
 						<br/>
 						<label>
 							<input type="radio" name="droit" value="GU">
-						Guide d'utilisation  (GU)
+							Guide d'utilisation  (GU)
 						</label>
 						<br/>
 						<label>
 							<input type="radio" name="droit" value="GO">
-						Guide opérateur  (GO)
+							Guide opérateur  (GO)
 						</label>
 						<br/>
 						<label>
 							<input type="radio" name="droit" value="DPST">
-						Dossier plan standard  (DPST)
+							Dossier plan standard  (DPST)
 						</label>
 						<br/>
 						<label>
 						<input type="radio" name="droit" value="DPSP">
-						Dossier plan spécifique  (DPSP)
+							Dossier plan spécifique  (DPSP)
 						</label>
 					</td>
 				</tr>

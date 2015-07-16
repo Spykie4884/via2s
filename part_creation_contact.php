@@ -1,12 +1,17 @@
 ﻿<?php
-if((isset($_POST['user_name'])) && (isset($_POST['user_Fname']))
-	&& (isset($_POST['user_societe'])) && (isset($_POST['user_function']))
-	&& (isset($_POST['user_phone'])) && (isset($_POST['user_mobile']))
-	&& (isset($_POST['user_fax'])) && (isset($_POST['user_email']))
-	&& (isset($_POST['user_address'])) && (isset($_POST['user_zipCode']))
-	&& (isset($_POST['user_city'])) && (isset($_POST['user_country']))
-	&& (isset($_POST['user_statut'])) && (isset($_POST['user_mdp']))
-	&& (isset($_POST['user_mdprep'])))
+if((isset($_POST['user_name']))&& ($_POST['user_name'] != '')
+	&& (isset($_POST['user_Fname']))&& ($_POST['user_Fname'] != '')
+	&& (isset($_POST['user_function']))&& ($_POST['user_function'] != '')
+	&& (isset($_POST['user_societe']))&& ($_POST['user_societe'] != '')
+	&& (isset($_POST['user_phone']))&& ($_POST['user_phone'] != '')
+	&& (isset($_POST['user_email']))&& ($_POST['user_email'] != '')
+	&& (isset($_POST['user_address']))&& ($_POST['user_address'] != '')
+	&& (isset($_POST['user_zipCode']))&& ($_POST['user_zipCode'] != '')
+	&& (isset($_POST['user_city']))&& ($_POST['user_city'] != '')
+	&& (isset($_POST['user_mdp']))&& ($_POST['user_mdp'] != '')
+	&& (isset($_POST['user_mdprep']))&& ($_POST['user_mdprep'] != '')
+	&& (isset($_POST['user_statut']))&& ($_POST['user_statut'] != '')
+	)
 {
 	if($_POST['user_mdp'] == $_POST['user_mdprep'])
 	{
@@ -15,6 +20,7 @@ if((isset($_POST['user_name'])) && (isset($_POST['user_Fname']))
 			($_POST['user_statut'] == 'administrateur') ||
 			($_POST['user_statut'] == 'super-administrateur'))
 		{
+			$bdd = bdd_connexion();
 			$registration = $bdd->prepare('INSERT INTO utilisateurs(
 				user_name, user_Fname, user_societe, user_function,
 				user_phone, user_mobile, user_fax, user_email,
@@ -53,14 +59,7 @@ if((isset($_POST['user_name'])) && (isset($_POST['user_Fname']))
 	}
 }
 ?>
-<div id="menu_vertical">
-	<ul>
-		<?php
-			//include('fun_creation_contact.php');
-			include('vmenu_admin.php');
-		?>
-	</ul>
-</div>
+
 <?php
-	include('form.php');
+	include('formulaire_creation_contact.php');
 ?>

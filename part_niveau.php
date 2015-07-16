@@ -13,6 +13,7 @@
 		<br/>
 		<center>
 			<?php
+				$Yaka = Yaka_connexion();
 				$fami = $Yaka->prepare('SELECT description FROM sous_famille');
 				$fami->execute(array(''));
 				while($ret = $fami->fetch())

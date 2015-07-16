@@ -1,23 +1,10 @@
 <?php
+//include('fun_BDD_recherche.php');
 if( (isset($_POST['user_emaillog'])) && (isset($_POST['user_mdp'])) )
 	{
-		try
-		{
-			$bdd = new PDO('mysql:host=localhost;dbname=via2s;charset=utf8', 'root', '');
-		}
-		catch (Exception $e)
-		{
-			echo ("BDD pas connecté");
-		}
-		try
-		{
-			$Yaka = new PDO("sqlsrv:Server=192.168.100.5\SQLYAKA;Database=base_test_2015", "sa", "SecurityMaster08");
-		}
-		catch (Exception $e)
-		{
-			echo 'Yaka pas connecté';
-		}
-		$requete = $bdd->query('SELECT * FROM utilisateurs WHERE user_email="' . $_POST['user_emaillog'] . '"');
+		bdd_connexion();
+		$requete = bdd_recherche_1($bdd, 'utilisateurs', 'user_email', $_POST['user_emaillog']);
+		//$requete = $bdd->query('SELECT * FROM utilisateurs WHERE user_email="' . $_POST['user_emaillog'] . '"');
 		$donneex = $requete->fetch();
 		if((isset($_POST['user_emaillog'])) && (isset($_POST['user_mdp'])) && (($_POST['user_emaillog']) != '') && (($_POST['user_mdp']) != '')
 		&& (($_POST['user_emaillog']) == $donneex['user_email']) && (($_POST['user_mdp']) == $donneex['user_mdp']))

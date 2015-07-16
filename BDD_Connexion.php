@@ -1,9 +1,4 @@
 <?php
-	session_start();
-	
-	
-	
-	
 	if(!(isset($_SESSION['user_statut'])))
 	{
 		try
@@ -12,7 +7,6 @@
 		}
 		catch (Exception $e)
 		{
-			//echo ("BDD pas connecté");
 		}
 		try
 		{
@@ -20,35 +14,7 @@
 		}
 		catch (Exception $e)
 		{
-			//echo 'Yaka pas connecté';
 		}
-		//$_SESSION['user_statut'] = 'visiteur';
 		$_SESSION['user_statut'] = 'visiteur';
 	}
-	else
-	{
-		/*if($_SESSION['user_statut'] == 'visiteur')
-			echo "vous êtes visiteurs";
-		else
-			if($_SESSION['user_statut'] == 'commercial')
-				echo "vous êtes commercial";
-			else
-				if($_SESSION['user_statut'] == 'administrateur')
-					echo "vous êtes administrateur";
-				else
-					if($_SESSION['user_statut'] == 'super-administrateur')
-						echo "vous êtes super-administrateur";
-					else
-						echo "vous êtes personne";*/
-	}
-	
-	setcookie('login', $_SESSION['user_statut'], time() + 365*24*3600, null, null, false, true);
-
-	/*
-	if (isset($_COOKIE['login']))
-	{
-		
-		echo $_COOKIE["login"];
-	}
-	*/
 ?>

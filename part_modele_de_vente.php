@@ -14,8 +14,8 @@
 		<div id="box">
 			<script type="text/javascript">
 				var uid = new Date().getTime();
-				var flashProxy = new FlashProxy(uid, '../img/strategie_commerciale.swf');
-				var tag = new FlashTag('../img/strategie_commerciale.swf', '100%', '100%');
+				var flashProxy = new FlashProxy(uid, 'img/strategie_commerciale.swf');
+				var tag = new FlashTag('img/strategie_commerciale.swf', '100%', '100%');
 				tag.setFlashvars('lcId='+uid);
 				tag.write(document);
 			</script>
@@ -30,11 +30,11 @@
 		</p>
 		<span class="strong_via2s">VIA2S</span> propose donc un modèle de vente qui : <br/>
 		<br/>
-		<p><img src="../img/puce.gif"> garantie une politique de prix transparente entre les différents acteurs,<br></p>
-		<p><img src="../img/puce.gif"> assure une pratique de marge en adéquation avec le marché,<br></p>
-		<p><img src="../img/puce.gif"> conserve des prix finaux concurrentiels en phase avec les attentes des clients,<br></p>
-		<p><img src="../img/puce.gif"> permet au client final une libre concurrence des prestataires,<br></p>
-		<p><img src="../img/puce.gif"> pérennise les investissements du client par le choix des produits de leaders mondiaux.<br></p>
+		<p><img src="img/puce.gif"> garantie une politique de prix transparente entre les différents acteurs,<br></p>
+		<p><img src="img/puce.gif"> assure une pratique de marge en adéquation avec le marché,<br></p>
+		<p><img src="img/puce.gif"> conserve des prix finaux concurrentiels en phase avec les attentes des clients,<br></p>
+		<p><img src="img/puce.gif"> permet au client final une libre concurrence des prestataires,<br></p>
+		<p><img src="img/puce.gif"> pérennise les investissements du client par le choix des produits de leaders mondiaux.<br></p>
 		<br>
 	</div>
 </div>

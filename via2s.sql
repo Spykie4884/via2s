@@ -1,9 +1,9 @@
-﻿-- phpMyAdmin SQL Dump
+-- phpMyAdmin SQL Dump
 -- version 4.1.14
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Ven 03 Juillet 2015 à 17:12
+-- Généré le :  Jeu 16 Juillet 2015 à 17:31
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -55,10 +55,19 @@ CREATE TABLE IF NOT EXISTS `devis` (
   `utilisateur_société_id` int(11) NOT NULL,
   `utilisateur_Contact_id` int(11) NOT NULL,
   `Modele_id` int(11) NOT NULL,
+  `valide` int(11) NOT NULL,
   PRIMARY KEY (`id`,`produit_id`,`utilisateur_id`,`utilisateur_société_id`,`utilisateur_Contact_id`,`Modele_id`),
   KEY `fk_Devis_utilisateur1_idx` (`utilisateur_id`,`utilisateur_société_id`,`utilisateur_Contact_id`),
   KEY `fk_Devis_Modele1_idx` (`Modele_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `devis`
+--
+
+INSERT INTO `devis` (`id`, `libelle`, `date_creation`, `statut`, `code_affaire`, `livraison`, `produit_id`, `utilisateur_id`, `utilisateur_société_id`, `utilisateur_Contact_id`, `Modele_id`, `valide`) VALUES
+(1, 'devis_test', '2015-07-01', 'debut', '4242', '4242', 5, 1, 0, 0, 0, 0),
+(2, 'devis_test', '2015-07-01', 'commande', '4242', '4242', 5, 1, 1, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -124,11 +133,36 @@ CREATE TABLE IF NOT EXISTS `historique` (
 --
 
 CREATE TABLE IF NOT EXISTS `modele` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `libelle` varchar(45) DEFAULT NULL,
-  `date` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `id_modele` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_modele` varchar(255) NOT NULL,
+  `date_modele` date DEFAULT NULL,
+  `quantite_reco` int(11) DEFAULT NULL,
+  `prix_reduc` decimal(10,0) DEFAULT NULL,
+  `prix_totale` decimal(10,0) DEFAULT NULL,
+  `statut_modele` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_modele`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `modele`
+--
+
+INSERT INTO `modele` (`id_modele`, `nom_modele`, `date_modele`, `quantite_reco`, `prix_reduc`, `prix_totale`, `statut_modele`) VALUES
+(1, 'test', NULL, NULL, NULL, NULL, NULL),
+(2, 'plop', NULL, NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `product_links`
+--
+
+CREATE TABLE IF NOT EXISTS `product_links` (
+  `id_product_links` int(11) NOT NULL AUTO_INCREMENT,
+  `id_products` int(11) DEFAULT NULL,
+  `id_modeles` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_product_links`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -170,18 +204,17 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
   `user_country` varchar(255) DEFAULT NULL,
   `user_statut` varchar(255) DEFAULT NULL,
   `user_mdp` varchar(255) DEFAULT NULL,
+  `date_creation` date NOT NULL,
   `valide` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 --
 -- Contenu de la table `utilisateurs`
 --
 
-INSERT INTO `utilisateurs` (`id`, `ref_client`, `user_name`, `user_Fname`, `user_societe`, `user_function`, `user_phone`, `user_mobile`, `user_fax`, `user_email`, `user_address`, `user_zipCode`, `user_city`, `user_country`, `user_statut`, `user_mdp`, `valide`) VALUES
-(1, NULL, 'a', 'a', 'a', 'a', 0, 0, 0, 'a', 'a', 0, 'a', '0', 'super-administrateur', 'a', 1),
-(2, NULL, 'test', 'test', 'test', 'test', 0, 0, 0, 'test', 'test', 0, 'test', 'test', 'super-administrateur', 'test', 1),
-(3, NULL, 'testons', 'testons', 'testons', 'testons', 0, 0, 0, 'testons', 'testons', 0, 'testons', 'testons', 'super-administrateur', 'testons', 1);
+INSERT INTO `utilisateurs` (`id`, `ref_client`, `user_name`, `user_Fname`, `user_societe`, `user_function`, `user_phone`, `user_mobile`, `user_fax`, `user_email`, `user_address`, `user_zipCode`, `user_city`, `user_country`, `user_statut`, `user_mdp`, `date_creation`, `valide`) VALUES
+(1, '#00000', 'VIA2S', 'VIA2S', 'VIA2S', 'Webmaster', 0, 0, 0, 'via2s@via2s.com', '22 Rue des Carriers Italiens', 91350, 'Grigny', 'France', 'super-administrateur', 'via2s', '2015-07-16', 1);
 
 -- --------------------------------------------------------
 

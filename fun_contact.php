@@ -1,28 +1,13 @@
 ﻿<?php
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=via2s;charset=utf8', 'root', '');
-	}
-	catch (Exception $e)
-	{
-		echo ("BDD pas connecté");
-	}
-	try
-	{
-		$Yaka = new PDO("sqlsrv:Server=192.168.100.5\SQLYAKA;Database=base_test_2015", "sa", "SecurityMaster08");
-	}
-	catch (Exception $e)
-	{
-		echo 'Yaka pas connecté';
-	}
+	$bdd = bdd_connexion();
+	$Yaka = Yaka_connexion();
 	$resultats=$bdd->query('SELECT * FROM utilisateurs WHERE valide="' . 0 . '"');
 	$resultats->setFetchMode(PDO::FETCH_OBJ);
 ?>
 <?php
-	if($resultat = $resultats->fetch())
-	{
-		
-		$_POST['tmp'] = ' ';
+if($resultat = $resultats->fetch())
+{
+	$_POST['tmp'] = ' ';
 ?>
 <center>
 	<form action="validation_inscription.php" method="post">
@@ -47,11 +32,22 @@
 				?>
 			</tbody>
 		</table>
-		<input id="Submit1" type="submit" value="Enregistrer" name="Enregistrer">
+		<table>
+			<tr>
+				<input id="Submit1" type="submit" value="Détails" name="Détails">
+			</tr>
+		</table>
 	</form>
 </center>
 <?php
-	}
-	else
-		echo '<center>Aucune demande de contact pour le moment.</center>';
+}
+else
+{
 ?>
+
+<center>
+	<?php
+		echo "Il n'y a aucun contact à valider";
+	}
+	?>
+</center>

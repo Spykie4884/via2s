@@ -53,7 +53,7 @@
 
 			<a href="http://www.stid.com/index.php?lang=fr" target="_blank"><img src="img/logos_partenaires/stid.gif" width="103" height="42" border="0"></a>
 
-									<a href="http://www.sony.fr/" target="_blank"><img src="img/logos_partenaires/sonyevolis.gif" alt="" border="0"></a>
+			<a href="http://www.sony.fr/" target="_blank"><img src="img/logos_partenaires/sonyevolis.gif" alt="" border="0"></a>
 			<a href="http://www.til-technologies.fr/" target="_blank"><img src="img/logos_partenaires/til_technologies-logo.png" alt="til technologies" border="0"></a>
 			<a href="http://www.saratec.com/" target="_blank"><img src="img/logos_partenaires/saratec.jpg" alt="" width="103" height="42" border="0"></a><br />
 			<a href="http://www.utcfssecurityproducts.fr/" target="_blank"><img src="img/logos_partenaires/utcfiresecurity.png" alt=""  border="0"></a>

@@ -12,23 +12,8 @@
 		<br/>
 		<br/>
 <?php
-		try
-		{
-			$bdd = new PDO('mysql:host=localhost;dbname=via2s;charset=utf8', 'root', '');
-		}
-		catch (Exception $e)
-		{
-			echo ("BDD pas connecté");
-		}
-		try
-		{
-			$Yaka = new PDO("sqlsrv:Server=192.168.100.5\SQLYAKA;Database=base_test_2015", "sa", "SecurityMaster08");
-			$Yaka->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}
-		catch (Exception $e)
-		{
-			echo 'Yaka pas connecté';
-		}
+	$bdd = bdd_connexion();
+	$Yaka = Yaka_connexion();
 	if (((isset($_POST['descrip'])) && ($_POST['descrip'] != ''))
 		|| ((isset($_POST['reference_part_number'])) && ($_POST['reference_part_number'] != ''))
 		|| ((isset($_POST['prix_publique'])) && ($_POST['prix_publique'] != ''))
@@ -114,9 +99,6 @@
 	}
 ?>
 
-
-<div id="content">
-	<div id="content_item">
 		<br/>
 		<br/>
 		<center>

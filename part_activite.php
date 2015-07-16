@@ -15,11 +15,11 @@
 			La société est organisée autour de 4 pôles d'activités : Commercialisation, Services, Recherche & Développement et Projets & Affaires.
 		</p>
 		<h1>Clients</h1>
-		<p "><span class="strong_via2s">VIA2S</span> vise les clients intermédiaires à travers les installateurs et intégrateurs, afin d'assurer une forte présence sur le marché national,
+		<p><span class="strong_via2s">VIA2S</span> vise les clients intermédiaires à travers les installateurs et intégrateurs, afin d'assurer une forte présence sur le marché national,
 			avec comme cible les clients finaux répartis entre les grands comptes, les PME et PMI dans les secteurs bancaires, tertiaires et industriels.
 		</p>
 		<h1>Stratégie</h1>
-		<p >La stratégie commerciale est de proposer des services à forte valeur ajoutée, de haut niveau
+		<p>La stratégie commerciale est de proposer des services à forte valeur ajoutée, de haut niveau
 			technique, de qualité, de disponibilité et de réactivité associée à la commercialisation
 			des produits suivant un modèle de vente garantissant une transparence entre les installateurs,
 			les intégrateurs et les clients finaux.

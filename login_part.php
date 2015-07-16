@@ -1,58 +1,19 @@
 ﻿<?php
-	/*
-						>>>>>CONNEXION<<<<<
-		Permet la connexion des membres du sites (client, commercial, administrateur
-		super-administrateur).
-	*/
-	
-
-	
-	
-	if( (isset($_POST['user_emaillog'])) && (isset($_POST['user_mdp'])) )
+include('fun_BDD_recherche.php');
+include('fun_login_part.php');
+if( (isset($_POST['user_emaillog'])) && (isset($_POST['user_mdp'])) )
+{
+	$bdd = bdd_connexion();
+	$requete = bdd_recherche_1($bdd, 'utilisateurs', 'user_email', $_POST['user_emaillog']);
+	$donneex = $requete->fetch();
+	if((isset($_POST['user_emaillog'])) && (isset($_POST['user_mdp'])) && (($_POST['user_emaillog']) != '') && (($_POST['user_mdp']) != '')
+	&& (($_POST['user_emaillog']) == $donneex['user_email']) && (($_POST['user_mdp']) == $donneex['user_mdp']))
 	{
-		try
-		{
-			$bdd = new PDO('mysql:host=localhost;dbname=via2s;charset=utf8', 'root', '');
-		}
-		catch (Exception $e)
-		{
-			echo ("BDD pas connecté");
-		}
-		try
-		{
-			$Yaka = new PDO("sqlsrv:Server=192.168.100.5\SQLYAKA;Database=base_test_2015", "sa", "SecurityMaster08");
-		}
-		catch (Exception $e)
-		{
-			echo 'Yaka pas connecté';
-		}
-		$requete = $bdd->query('SELECT * FROM utilisateurs WHERE user_email="' . $_POST['user_emaillog'] . '"');
-		$donneex = $requete->fetch();
-		if((isset($_POST['user_emaillog'])) && (isset($_POST['user_mdp'])) && (($_POST['user_emaillog']) != '') && (($_POST['user_mdp']) != '')
-		&& (($_POST['user_emaillog']) == $donneex['user_email']) && (($_POST['user_mdp']) == $donneex['user_mdp']))
-		{
-			$_SESSION['ref_client'] = $donneex['ref_client'];
-			$_SESSION['user_name'] = $donneex['user_name'];
-			$_SESSION['user_Fname'] = $donneex['user_Fname'];
-			$_SESSION['user_societe'] = $donneex['user_societe'];
-			$_SESSION['user_function'] = $donneex['user_function'];
-			$_SESSION['user_phone'] = $donneex['user_phone'];
-			$_SESSION['user_mobile'] = $donneex['user_mobile'];
-			$_SESSION['user_fax'] = $donneex['user_fax'];
-			$_SESSION['user_email'] = $donneex['user_email'];
-			$_SESSION['user_address'] = $donneex['user_address'];
-			$_SESSION['user_zipCode'] = $donneex['user_zipCode'];
-			$_SESSION['user_city'] = $donneex['user_city'];
-			$_SESSION['user_country'] = $donneex['user_country'];
-			$_SESSION['user_statut'] = $donneex['user_statut'];
-			$_SESSION['co'] = 1;
-		}
-		else
-		{
-		}
+		Success_connect($donneex);
 	}
-	if($_SESSION['user_statut'] == 'visiteur')
-	{
+}
+if($_SESSION['user_statut'] == 'visiteur')
+{
 ?>
 
 	<div class="login1">
@@ -64,7 +25,6 @@
 			Mot de passe :
 			<input type="password" name="user_mdp">
 			<input type="hidden" name="supporttype" />
-			<!--<a href="javascript:getlink()">Se connecter</a>-->
 			<script type="text/javascript">
 				function submitform()
 				{
@@ -76,11 +36,10 @@
 	</div>
 	
 <?php
-	}
-	else
-	{
-?>
-
+}
+else
+{
+	?>
 	<div class="login1">
 		</br>
 		
@@ -91,11 +50,5 @@
 		?>
 	</div>
 	<?php
-	}
-	
-	
-	?>
-	
-	<?php
-	include("ariane.php");
-	?>
+}
+?>

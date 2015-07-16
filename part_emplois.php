@@ -23,7 +23,7 @@
 		<h1>Nos Stages</h1>
 		<br>
 		<p>
-			<FONT color="#0863CE" face="arial black" size="2">VIA2S</FONT> est ouvert à toutes propositions de stages. Nous recherchons des candidats avec des profils BAC+2 à BAC+5 ou doctorat. <br />Pour postuler, envoyez votre CV et une lettre de motivation à <A href="mailto:contact@via2s.com?subject=Demande de renseignements">contact@via2s.com</A>.
+			<font color="#0863CE" face="arial black" size="2">VIA2S</font> est ouvert à toutes propositions de stages. Nous recherchons des candidats avec des profils BAC+2 à BAC+5 ou doctorat. <br />Pour postuler, envoyez votre CV et une lettre de motivation à <a href="mailto:contact@via2s.com?subject=Demande de renseignements">contact@via2s.com</a>.
 		</p>
 	</div>
 </div>

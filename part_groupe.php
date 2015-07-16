@@ -22,7 +22,7 @@
 		<h1>Emplois</h1>
 		<p>
 			Nous recherchons des candidats avec des profils BAC+2 à BAC+5 ou doctorat.
-			Pour postuler, envoyez votre CV et une lettre de motivation à  <A href="mailto:contact@via2s.com?subject=Demande de renseignements">contact@via2s.com</A>.
+			Pour postuler, envoyez votre CV et une lettre de motivation à  <a href="mailto:contact@via2s.com?subject=Demande de renseignements">contact@via2s.com</a>.
 		</p>
 	</div>
 </div>

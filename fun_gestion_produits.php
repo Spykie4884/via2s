@@ -1,24 +1,6 @@
 ﻿<?php
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=via2s;charset=utf8', 'root', '');
-	}
-	catch (Exception $e)
-	{
-		echo ("BDD pas connecté");
-	}
-	try
-	{
-		$Yaka = new PDO("sqlsrv:Server=192.168.100.5\SQLYAKA;Database=base_test_2015", "sa", "SecurityMaster08");
-		$Yaka->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	}
-	catch (Exception $e)
-	{
-		echo 'Yaka pas connecté';
-	}
-	
-	
-	
+	$Yaka = Yaka_connexion();
+
 	//Nom du produit && Reference && Reference interne && Famille && Niveau
 	if(((isset($_POST['descrip'])) && ($_POST['descrip'] != ''))
 		&& ((isset($_POST['famille'])) && ($_POST['famille'] != ''))

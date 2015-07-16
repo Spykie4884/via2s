@@ -1,24 +1,5 @@
 ﻿<?php
-	//$_SESSION['user_statut'] = 'super-administrateur';
-		
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=via2s;charset=utf8', 'root', '');
-	}
-	catch (Exception $e)
-	{
-		echo ("BDD pas connecté");
-	}
-	try
-	{
-		$Yaka = new PDO("sqlsrv:Server=192.168.100.5\SQLYAKA;Database=base_test_2015", "sa", "SecurityMaster08");
-	}
-	catch (Exception $e)
-	{
-		echo 'Yaka pas connecté';
-	}
-	//$_SESSION['user_statut'] = 'visiteur';
-	//$_SESSION['user_statut'] = 'super-administrateur';
+	$bdd = bdd_connexion();
 	if(isset($_POST['user_email']))
 	{
 		$test = $bdd->prepare("SELECT * FROM utilisateurs WHERE user_email = '" . $_POST['user_email'] . "'");

@@ -1,19 +1,22 @@
 ﻿<?php
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=via2s;charset=utf8', 'root', '');
-	}
-	catch (Exception $e)
-	{
-		echo ("BDD pas connecté");
-	}
 	$nombre_de_contact_en_attente = 0;
 	$nombre_de_devis_en_attente = 0;
 	$nombre_de_commande_en_attente = 0;
+	
+	$bdd = bdd_connexion();
 	$req = $bdd->query('SELECT * FROM utilisateurs');
+	//Compte le nombre de contact en attente
 	while($row = $req->fetch()) {
 		if($row['valide'] == 0)
-			$nombre_de_contact_en_attente = $nombre_de_contact_en_attente + 1;
+			$nombre_de_contact_en_attente++;
+	}
+	$raq = $bdd->query('SELECT * FROM devis');
+	//Compte le nombre de contact en attente
+	while($raw = $raq->fetch()) {
+		if($raw['statut'] == 'commande')
+			$nombre_de_commande_en_attente++;
+		else
+			$nombre_de_devis_en_attente++;
 	}
 ?>
 <div id="menu_vertical">
@@ -48,15 +51,15 @@
 					<th class="entete" colspan ="2">COMMANDE</th>
 				</tr>
 				<tr>
-					<td style="text-align:right">Nombre des devis : </td>
+					<td style="text-align:right">Nombre de devis : </td>
 					<td>
-						<font SIZE="4"> <?php echo $nombre_de_devis_en_attente = 0; ?></font>
+						<font SIZE="4"> <?php echo $nombre_de_devis_en_attente; ?></font>
 					</td>
 				</tr>
 				<tr>
-					<td>Nombre des commande : </td>
+					<td>Nombre de commande : </td>
 					<td>
-						<font SIZE="4"> <?php echo $nombre_de_commande_en_attente = 0; ?></font>
+						<font SIZE="4"> <?php echo $nombre_de_commande_en_attente; ?></font>
 					</td>
 				</tr>
 			</table>

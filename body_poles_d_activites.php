@@ -1,4 +1,4 @@
 ﻿<?php
 	$page = 'poles_d_activites';
-	include('part_activite.php');
+	include('part_poles_d_activite.php');
 ?>

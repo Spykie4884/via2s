@@ -1,46 +1,21 @@
 ﻿<?php
+include('fun_global_var.php');
 if(isset($_POST['user_name']) && isset($_POST['user_Fname']) && isset($_POST['user_function']) && isset($_POST['user_societe'])
 	&& isset($_POST['user_phone']) && isset($_POST['user_email']) && isset($_POST['user_address'])
 	&& isset($_POST['user_zipCode']) && isset($_POST['user_city']))
+{
+	//CONNEXION A LA BASE DE DONNEES
+	$bdd = bdd_connexion();
+	//INSERTION DES ELEMENTS DANS LA BASE DE DONNEES
+	prepare_bdd_insert_5_elts($bdd, 'produit', 'id_famille', 'description', 'reference_part_number', $prix_publique, 'reference');
+
+	if((isset($_POST['description'])))
 	{
-		try
-		{
-			$bdd = new PDO('mysql:host=localhost;dbname=via2s;charset=utf8', 'root', '');
-		}
-		catch (Exception $e)
-		{
-			echo ("BDD pas connecté");
-		}
-		$contact_register = $Yaka->prepare('INSERT INTO produit(
-			id_famille, description, reference_part_number, prix_publique, reference
-			) VALUES(
-			:id_famille, :description, :reference_part_number, :prix_publique, :reference
-			)');
-		$contact_register->execute(array(
-			':id_famille' => ($_POST['famille']),
-			':description' => ($_POST['description']),
-			':reference_part_number' => ($_POST['reference_part_number']),
-			':prix_publique' => $public_price,
-			':reference' => ($_POST['reference'])
-		));
-		if((isset($_POST['description'])))
-		{
-			$public_price = floatval(preg_replace("/[^-0-9\.]/",".",$_POST['prix_public']));
-			
-			$product_register = $Yaka->prepare('INSERT INTO produit(
-				id_famille, description, reference_part_number, prix_publique, reference
-				) VALUES(
-				:id_famille, :description, :reference_part_number, :prix_publique, :reference
-				)');
-			$product_register->execute(array(
-				':id_famille' => ($_POST['famille']),
-				':description' => ($_POST['description']),
-				':reference_part_number' => ($_POST['reference_part_number']),
-				':prix_publique' => $public_price,
-				':reference' => ($_POST['reference'])
-			));
-		}
+		$public_price = floatval(preg_replace("/[^-0-9\.]/",".",$_POST['prix_public']));
+		
+		prepare_bdd_insert_5_elts($Yaka, 'produit', 'id_famille', 'description', 'reference_part_number', $prix_publique, 'reference');
 	}
+}
 	
 $nom='';
 $prenom='';
@@ -55,20 +30,20 @@ $code='';
 $ville='';
 $pays='';
 
-if(((@$_SESSION['err_nom'])==1) || ((@$_SESSION['err_prenom'])==1) || ((@$_SESSION['err_fonction'])==1) || ((@$_SESSION['err_societe'])==1) || ((@$_SESSION['err_tel'])==1) || ((@$_SESSION['err_telm'])==1) || ((@$_SESSION['err_fax'])==1) || ((@$_SESSION['err_mail'])==1) || ((@$_SESSION['err_adr'])==1) || ((@$_SESSION['err_cp'])==1) || ((@$_SESSION['err_ville'])==1) || ((@$_SESSION['err_pays'])==1)) {
-
-$nom=$_SESSION['nom'];
-$prenom=$_SESSION['prenom'];
-$fonc_util=$_SESSION['fonction'];
-$mail=$_SESSION['mail'];
-$tel_bureau=$_SESSION['tel_bureau'];
-$tel_mobile=$_SESSION['tel_mobile'];
-$fax=$_SESSION['fax'];
-$societe=$_SESSION['societe'];
-$addre=$_SESSION['adresse'];
-$code=$_SESSION['code_postal'];
-$ville=$_SESSION['ville'];
-$pays=$_SESSION['pays'];
+if(((@$_SESSION['err_nom'])==1) || ((@$_SESSION['err_prenom'])==1) || ((@$_SESSION['err_fonction'])==1) || ((@$_SESSION['err_societe'])==1) || ((@$_SESSION['err_tel'])==1) || ((@$_SESSION['err_telm'])==1) || ((@$_SESSION['err_fax'])==1) || ((@$_SESSION['err_mail'])==1) || ((@$_SESSION['err_adr'])==1) || ((@$_SESSION['err_cp'])==1) || ((@$_SESSION['err_ville'])==1) || ((@$_SESSION['err_pays'])==1))
+{
+	$nom=$_SESSION['nom'];
+	$prenom=$_SESSION['prenom'];
+	$fonc_util=$_SESSION['fonction'];
+	$mail=$_SESSION['mail'];
+	$tel_bureau=$_SESSION['tel_bureau'];
+	$tel_mobile=$_SESSION['tel_mobile'];
+	$fax=$_SESSION['fax'];
+	$societe=$_SESSION['societe'];
+	$addre=$_SESSION['adresse'];
+	$code=$_SESSION['code_postal'];
+	$ville=$_SESSION['ville'];
+	$pays=$_SESSION['pays'];
 
 	?>
 	<br><br><font color="red"><b>Saisies non valides pour les champs suivants : </b></font><br>

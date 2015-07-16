@@ -1,27 +1,11 @@
-﻿
-<div id="content">
+﻿<div id="content">
 	<div id="content_item">
 		<center><h1>RECHERCHER DES DOCUMENTS</h1></center>
 		<br/>
 		<br/>
 <?php
-		try
-		{
-			$bdd = new PDO('mysql:host=localhost;dbname=via2s;charset=utf8', 'root', '');
-		}
-		catch (Exception $e)
-		{
-			echo ("BDD pas connecté");
-		}
-		try
-		{
-			$Yaka = new PDO("sqlsrv:Server=192.168.100.5\SQLYAKA;Database=base_test_2015", "sa", "SecurityMaster08");
-			$Yaka->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		}
-		catch (Exception $e)
-		{
-			echo 'Yaka pas connecté';
-		}
+	$bdd = bdd_connexion();
+	$Yaka = Yaka_connexion();
 	if (((isset($_POST['descrip'])) && ($_POST['descrip'] != ''))
 		|| ((isset($_POST['reference_part_number'])) && ($_POST['reference_part_number'] != ''))
 		|| ((isset($_POST['prix_publique'])) && ($_POST['prix_publique'] != ''))
@@ -135,27 +119,29 @@
 					</tr>
 					<tr>
 						<td style="text-align:right; font-weight: bold;">
-							<label for="famille">Famille :descrip</label>
+							<label for="famille">Famille :</label>
 						</td>
 						<td>
 							<select name="famille" id="pays">
-					<?php
-						$fami = $Yaka->prepare('SELECT description FROM famille');
-						$fami->execute(array(''));
-						while($ret = $fami->fetch())
-						{
-							echo '<option value="description">' . $ret['description'] . '</option>';
-						}
-					?>
+								<option value=" "></option>
+								<?php
+									$fami = $Yaka->prepare('SELECT description FROM famille');
+									$fami->execute(array(''));
+									while($ret = $fami->fetch())
+									{
+										echo '<option value="description">' . $ret['description'] . '</option>';
+									}
+								?>
 							</select>
 						</td>
 					</tr>
 					<tr>
 						<td style="text-align:right; font-weight: bold;">
-							<label for="niveau">Niveau :sous-famille descrip</label>
+							<label for="niveau">Niveau :</label>
 						</td>
 						<td>
 							<select name="niveau" id="pays">
+								<option value=" "></option>
 								<?php
 									$sfami = $Yaka->prepare('SELECT description FROM sous_famille');
 									$sfami->execute(array(''));
@@ -191,21 +177,15 @@
 							<input type="text" name="reference" id="reference" />
 						</td>
 					</tr>
+				</table>
+				<table>
 					<tr>
 						<td style="text-align:center; font-weight: bold;">
-							<input id="submit" type="submit" value="rechercher_produit" name="rechercher_produit">
+							<input id="submit" type="submit" value="rechercher document" name="rechercher_document">
 						</td>
 					</tr>
 				</table>
 			</form>
 		</center>
-<div id="content">
-	<div id="content_item">
-		<center><a href='ajout_produits.php'>Ajout de produits</a></center>
-	</div>
-</div>
-<?php
-	//}
-?>
 	</div>
 </div>

@@ -1,4 +1,4 @@
 ﻿<?php
-	$page = 'Activit&eacute';
+	$page = 'Activite';
 	include('part_activite.php');
 ?>

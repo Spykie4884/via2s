@@ -1,4 +1,20 @@
 ﻿<?php
+	$_POST['user_name']='';
+	$_POST['user_Fname']='';
+	$_POST['user_function']='';
+	$_POST['user_societe']='';
+	$_POST['user_phone']='';
+	$_POST['user_mobile']='';
+	$_POST['user_fax']='';
+	$_POST['user_email']='';
+	$_POST['user_address']='';
+	$_POST['user_zipCode']='';
+	$_POST['user_city']='';
+	$_POST['user_country']='';
+	$_POST['user_mdp']='';
+	$_POST['user_mdprep']='';
+	$_POST['user_statut']='';
+	
 	$nom='';
 	$prenom='';
 	$fonc_util='';
@@ -196,6 +212,29 @@
 					<td style="text-align:right;"><font color="red" face="Verdana, Arial"></font>Confirmation Mot de Passe :</td>
 					<td>
 						<input type="text" name="user_mdprep" size="58">
+					</td>
+				</tr>
+				<tr>
+					<td class="checker">
+						<label>
+							<input type="radio" name="user_statut" value="client">
+							client
+						</label>
+						<br/>
+						<label>
+							<input type="radio" name="user_statut" value="commercial">
+							commercial
+						</label>
+						<br/>
+						<label>
+							<input type="radio" name="user_statut" value="administrateur">
+							administrateur
+						</label>
+						<br/>
+						<label>
+							<input type="radio" name="user_statut" value="super-administrateur">
+							super-administrateur
+						</label>
 					</td>
 				</tr>
 			</table>
