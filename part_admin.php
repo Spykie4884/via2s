@@ -1,5 +1,6 @@
 ﻿<?php
 	$nombre_de_contact_en_attente = 0;
+	$nombre_de_demande_adhesion = 0;
 	$nombre_de_devis_en_attente = 0;
 	$nombre_de_commande_en_attente = 0;
 	
@@ -9,6 +10,12 @@
 	while($row = $req->fetch()) {
 		if($row['valide'] == 0)
 			$nombre_de_contact_en_attente++;
+	}
+	//Compte le nombre de demande d'adhesion
+	$ade = $bdd->query('SELECT * FROM demande_adhesion');
+	while($adi = $ade->fetch()) {
+		if($adi['user_name'])
+			$nombre_de_demande_adhesion++;
 	}
 	$raq = $bdd->query('SELECT * FROM devis');
 	//Compte le nombre de contact en attente
@@ -40,6 +47,12 @@
 					<td style="text-align:right">Contacts en attente : </td>
 					<td>
 						<font SIZE="4"> <?php echo $nombre_de_contact_en_attente; ?></font>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align:right">Demande d'adhésion en attente : </td>
+					<td>
+						<font SIZE="4"> <?php echo $nombre_de_demande_adhesion; ?></font>
 					</td>
 				</tr>
 				<tr>

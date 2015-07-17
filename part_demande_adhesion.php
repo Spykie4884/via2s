@@ -1,20 +1,58 @@
 ﻿<?php
-include('fun_global_var.php');
-if(isset($_POST['user_name']) && isset($_POST['user_Fname']) && isset($_POST['user_function']) && isset($_POST['user_societe'])
-	&& isset($_POST['user_phone']) && isset($_POST['user_email']) && isset($_POST['user_address'])
-	&& isset($_POST['user_zipCode']) && isset($_POST['user_city']))
+if(isset($_POST['user_name']) && ($_POST['user_name'] != '')
+	&& isset($_POST['user_Fname']) && ($_POST['user_Fname'] != '')
+	&& isset($_POST['user_function']) && ($_POST['user_function'] != '')
+	&& isset($_POST['user_societe']) && ($_POST['user_societe'] != '')
+	&& isset($_POST['user_phone']) && ($_POST['user_phone'] != '')
+	&& isset($_POST['user_email']) && ($_POST['user_email'] != '')
+	&& isset($_POST['user_address']) && ($_POST['user_address'] != '')
+	&& isset($_POST['user_zipCode']) && ($_POST['user_zipCode'] != '')
+	&& isset($_POST['user_city']) && ($_POST['user_city'] != '')
+	&& isset($_POST['user_mdp']) && ($_POST['user_mdp'] != '')
+	&& isset($_POST['user_mdprep']) && ($_POST['user_mdprep'] != ''))
 {
-	//CONNEXION A LA BASE DE DONNEES
-	$bdd = bdd_connexion();
-	//INSERTION DES ELEMENTS DANS LA BASE DE DONNEES
-	prepare_bdd_insert_5_elts($bdd, 'produit', 'id_famille', 'description', 'reference_part_number', $prix_publique, 'reference');
-
-	if((isset($_POST['description'])))
+	if($_POST['user_mdp'] == $_POST['user_mdprep'])
 	{
-		$public_price = floatval(preg_replace("/[^-0-9\.]/",".",$_POST['prix_public']));
-		
-		prepare_bdd_insert_5_elts($Yaka, 'produit', 'id_famille', 'description', 'reference_part_number', $prix_publique, 'reference');
+		//CONNEXION A LA BASE DE DONNEES
+		$bdd = bdd_connexion();
+		//INSERTION DES ELEMENTS DANS LA BASE DE DONNEES
+		$registration = $bdd->prepare('INSERT INTO demande_adhesion(
+					user_name, user_Fname, user_societe, user_function,
+					user_phone, user_mobile, user_fax, user_email,
+					user_address, user_zipCode, user_city, user_country,
+					user_mdp
+					) VALUES(
+					:user_name, :user_Fname, :user_societe, :user_function,
+					:user_phone, :user_mobile, :user_fax, :user_email,
+					:user_address, :user_zipCode, :user_city, :user_country,
+					:user_mdp
+					)');
+				$registration->execute(array(
+					'user_name' => $_POST['user_name'],
+					'user_Fname' => $_POST['user_Fname'],
+					'user_societe' => $_POST['user_societe'],
+					'user_function' => $_POST['user_function'],
+					'user_phone' => $_POST['user_phone'],
+					'user_mobile' => $_POST['user_mobile'],
+					'user_fax' => $_POST['user_fax'],
+					'user_email' => $_POST['user_email'],
+					'user_address' => $_POST['user_address'],
+					'user_zipCode' => $_POST['user_zipCode'],
+					'user_city' => $_POST['user_city'],
+					'user_country' => $_POST['user_country'],
+					'user_mdp' => $_POST['user_mdp'],
+				));
+				echo 'INSCRIPTION REUSSIE';
 	}
+	else
+	{
+		echo 'MOT DE PASSE NON CORRECT';
+	}
+}
+else
+{
+	include('fun_global_var.php');
+	POST_zero();
 }
 	
 $nom='';
@@ -127,7 +165,7 @@ if(((@$_SESSION['err_nom'])==1) || ((@$_SESSION['err_prenom'])==1) || ((@$_SESSI
 	<div class="content_item">
 		<h1><center>AJOUTER UN CONTACT</center></h1>
 		<br>
-		<form method="post" action="creation_contact.php">
+		<form method="post" action="demande_adhesion.php">
 			<br>
 			<table>
 				<tr>

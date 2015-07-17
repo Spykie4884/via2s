@@ -72,62 +72,73 @@
 							</thead>
 							<tbody>
 								<?php
+								$valid_prod = $Yaka->prepare('SELECT * FROM View_produits_actifs WHERE id_produit LIKE :idprod');
+								$valid_prod->execute(array(':idprod' => $row['id'] . '%'));
+								$actif = $valid_prod->fetch();
 								$color = 'pair';
 								$fam = $Yaka->prepare('SELECT * FROM famille WHERE id = :idfam ');
-								$fam->execute(array(':idfam' => $row['id_famille']));
-									$ret = $fam->fetch();
-								echo "<tr class='pair'>
-													<td width='100'><span class='casual'>" . $row['reference_part_number'] . "</span></td>
-													<td align='left'>" . $row['description'] . "</td>
-													<td width='100'>" . $row['prix_publique'] . "</td>
-													<td width='100'>" . $ret['description'] . "</td>
-													<td width='50'>" ;
-								$_SESSION['reference_part_number_produit'] = $row['reference_part_number'];
-								$_SESSION['description_produit'] = $row['description'];
-								$_SESSION['prix_publique_produit'] = $row['prix_publique'];
-								$_SESSION['famille_produit'] = $ret['description'];
-								echo "<a href='edit_produit.php'>A</a>";
-								echo "</td>
-										</tr>";
-								$color = 'impaire';
-								while($row = $recherche->fetch())
+								if($actif['actif'] == 'Oui')
 								{
 									$fam->execute(array(':idfam' => $row['id_famille']));
 									$ret = $fam->fetch();
-									if($color == 'pair')
+									echo "<tr class='pair'>
+														<td width='100'><span class='casual'>" . $row['reference_part_number'] . "</span></td>
+														<td align='left'>" . $row['description'] . "</td>
+														<td width='100'>" . $row['prix_publique'] . "</td>
+														<td width='100'>" . $ret['description'] . "</td>
+														<td width='50'>" ;
+									$_SESSION['reference_part_number_produit'] = $row['reference_part_number'];
+									$_SESSION['description_produit'] = $row['description'];
+									$_SESSION['prix_publique_produit'] = $row['prix_publique'];
+									$_SESSION['famille_produit'] = $ret['description'];
+									echo "<a href='edit_produit.php'>A</a>";
+									echo "</td>
+											</tr>";
+									$color = 'impaire';
+								}
+								while($row = $recherche->fetch())
+								{
+									$valid_prod->execute(array(':idprod' => $row['id'] . '%'));
+									$act = $valid_prod->fetch();
+									if($actif['actif'] == 'Oui')
 									{
-										
-										echo "<tr class='pair'>
-													<td width='100'><span class='casual'>" . $row['reference_part_number'] . "</span></td>
-													<td align='left'>" . $row['description'] . "</td>
-													<td width='100'>" . $row['prix_publique'] . "</td>
-													<td width='100'>" . $ret['description'] . "</td>
-													<td width='50'>" ;
-										$_SESSION['reference_part_number_produit'] = $row['reference_part_number'];
-										$_SESSION['description_produit'] = $row['description'];
-										$_SESSION['prix_publique_produit'] = $row['prix_publique'];
-										$_SESSION['famille_produit'] = $ret['description'];
-										echo "<a href='edit_produit.php'>A</a>";
-										echo "</td>
-												</tr>";
-										$color = 'impaire';
-									}
-									else
-									{
-										echo "<tr class='impaire'>
-													<td width='100'><span class='casual'>" . $row['reference_part_number'] . "</span></td>
-													<td align='left'>" . $row['description'] . "</td>
-													<td width='100'>" . $row['prix_publique'] . "</td>
-													<td width='100'>" . $ret['description'] . "</td>
-													<td width='50'>" ;
-										$_SESSION['reference_part_number_produit'] = $row['reference_part_number'];
-										$_SESSION['description_produit'] = $row['description'];
-										$_SESSION['prix_publique_produit'] = $row['prix_publique'];
-										$_SESSION['famille_produit'] = $ret['description'];
-										echo "<a href='edit_produit.php'>A</a>";
-										echo "</td>
-												</tr>";
-										$color = 'pair';
+										$fam->execute(array(':idfam' => $row['id_famille']));
+										$ret = $fam->fetch();
+										if($color == 'pair')
+										{
+											
+											echo "<tr class='pair'>
+														<td width='100'><span class='casual'>" . $row['reference_part_number'] . "</span></td>
+														<td align='left'>" . $row['description'] . "</td>
+														<td width='100'>" . $row['prix_publique'] . "</td>
+														<td width='100'>" . $ret['description'] . "</td>
+														<td width='50'>" ;
+											$_SESSION['reference_part_number_produit'] = $row['reference_part_number'];
+											$_SESSION['description_produit'] = $row['description'];
+											$_SESSION['prix_publique_produit'] = $row['prix_publique'];
+											$_SESSION['famille_produit'] = $ret['description'];
+											echo "<a href='edit_produit.php'>A</a>";
+											echo "</td>
+													</tr>";
+											$color = 'impaire';
+										}
+										else
+										{
+											echo "<tr class='impaire'>
+														<td width='100'><span class='casual'>" . $row['reference_part_number'] . "</span></td>
+														<td align='left'>" . $row['description'] . "</td>
+														<td width='100'>" . $row['prix_publique'] . "</td>
+														<td width='100'>" . $ret['description'] . "</td>
+														<td width='50'>" ;
+											$_SESSION['reference_part_number_produit'] = $row['reference_part_number'];
+											$_SESSION['description_produit'] = $row['description'];
+											$_SESSION['prix_publique_produit'] = $row['prix_publique'];
+											$_SESSION['famille_produit'] = $ret['description'];
+											echo "<a href='edit_produit.php'>A</a>";
+											echo "</td>
+													</tr>";
+											$color = 'pair';
+										}
 									}
 								}
 								$affichage = 1;

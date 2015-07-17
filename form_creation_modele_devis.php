@@ -1,5 +1,6 @@
 <?php
 	$compteur = 0;
+	//TABLEAU DU BAS
 ?>
 <div id="content">
 	<div class="content_item">
@@ -30,7 +31,7 @@
 								echo 'designation';
 							?>
 						</td>
-						<td>
+				 		<td>
 							<?php
 								//PRIX HT
 								echo 42;

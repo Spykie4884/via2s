@@ -1,19 +1,17 @@
 ﻿<?php
 	$bdd = bdd_connexion();
 	$Yaka = Yaka_connexion();
-	if((isset($_POST['submit'])) && ($_POST['submit'] == 'OUI'))
-	{
-		echo 'plopnfyjhtyhdfh';
-	}
-	else
-	{
-		$_POST['submit'] = '';
-	}
+	$compteur = 0;
 ?>
 <div id="content">
 	<div id="content_item">
+		<center><h1>CREATION MODELE DEVIS</h1></center>
+		<br/>
+		<br/>
 		<center>
-			<h3>RECHERCHE ICI</h3>
+			<?php
+				include('form_recherche_creation_modele_devis.php');
+			?>
 			<?php
 				include('form_creation_modele_devis.php');
 			?>

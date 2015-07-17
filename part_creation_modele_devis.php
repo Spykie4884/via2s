@@ -1,14 +1,7 @@
 ﻿<?php
 	$bdd = bdd_connexion();
 	$Yaka = Yaka_connexion();
-	if((isset($_POST['submit'])) && ($_POST['submit'] == 'OUI'))
-	{
-		echo 'plopnfyjhtyhdfh';
-	}
-	else
-	{
-		$_POST['submit'] = '';
-	}
+	$SESSION['modele_name'] = '';
 ?>
 <div id="content">
 	<div id="content_item">
@@ -18,6 +11,7 @@
 		<br/>
 		<br/>
 		<center>
+			<!-- NOUVEAU MODELE -->
 			<h3>CREER UN NOUVEAU MODELE</h3>
 			<form method="post" action="creation_modele_devis_2.php">
 				<br>
@@ -40,6 +34,7 @@
 				</table>
 			</form>
 			<br/>
+			<!-- MODELE EXISTANT -->
 			<h3>CHOISIR UN MODELE EXISTANT</h3>
 			<form method="post" action="creation_modele_devis_2.php">
 				<tr>
@@ -55,6 +50,7 @@
 							while($ret = $mod->fetch())
 							{
 								echo '<option value="' . $ret['nom_modele'] . '">' . $ret['nom_modele'] . '</option>';
+								//echo '<option name="choice" value="' . $ret['nom_modele'] . '">' . $ret['nom_modele'] . '</option>';
 							}
 							?>
 						</select>
@@ -65,3 +61,11 @@
 		</center>
 	</div>
 </div>
+<?php
+/*
+if(!(empty($_POST['choice'])))
+{
+	echo 'oshgifdmgidgsn';
+}
+*/
+?>
