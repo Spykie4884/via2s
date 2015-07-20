@@ -11,8 +11,7 @@
 		<center>
 			<?php
 				include('form_recherche_creation_modele_devis.php');
-			?>
-			<?php
+				include('form_formulaire_recherche_creation_modele_devis.php');
 				include('form_creation_modele_devis.php');
 			?>
 		</center>

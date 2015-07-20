@@ -1,54 +1,79 @@
 <?php
-	$compteur = 0;
-	//TABLEAU DU BAS
+include('fun_creation_modele_3.php');
+
+$tabvide = 0;
+$compteur = 0;
 ?>
-<div id="content">
-	<div class="content_item">
-		<center>
-			<div class="tableau">
-				<table class="tab">
-					<tr class="tete">
-						<th class="debut">N°</th><th class="designation">
-							Désignation
-						</th>
-						<th>
-							PU € HT
-						</th>
-						<th>
-							<input type="checkbox" name="check" value="cochez" onClick="checkUncheck(document.formCreer, document.formCreer.check)">
-						</th>
-					</tr>
+		<table class="tab">
+			<?php
+			if (!empty($_POST['options']))
+			{
+				$stmt = $bdd->prepare("INSERT INTO donnee_modele (nom_modele, ref_produit) VALUES (:nom_modele, :ref_produit)");
+				$stmt->bindParam(':nom_modele', $_SESSION['modele_name']);
+				$stmt->bindParam(':ref_produit', $id_produit);
+				foreach($_POST['options'] as $checkU)
+				{
+					$id_produit = $checkU;
+					$stmt->execute();
+					/*
+					$prodinfos =  $Yaka->prepare('SELECT * FROM produit WHERE id = :id');
+					$prodinfos->execute(array(':id' => $checkU));
+					$prodinfo = $prodinfos->fetch();
+					*/
+				}
+			}
+			if((isset($_SESSION['modele_name'])) && ($_SESSION['modele_name'] != ''))
+			{
+				$sql =  'SELECT * FROM donnee_modele WHERE nom_modele = "'. $_SESSION['modele_name'] .'"';
+				//$donnee_modele =  $bdd->prepare($sql);
+				//$info_donnee_modele = $donnee_modele->fetch();
+
+				$prodinfos =  $Yaka->prepare('SELECT * FROM produit WHERE id = :id');
+				$prodinfo = $prodinfos->fetch();
+				$donnee_modele =  $bdd->prepare('SELECT * FROM donnee_modele WHERE nom_modele = ?');
+				$donnee_modele->execute(array($_SESSION['modele_name']));
+				foreach  ($bdd->query($sql) as $row)
+				{
+					
+					$info_donnee_modele = $donnee_modele->fetch();
+					$prodinfos->execute(array(':id' => $info_donnee_modele['ref_produit']));
+					$prodinfo = $prodinfos->fetch();
+					if($tabvide == 0)
+					{
+						?>
+						<tr class="tete">
+							<th class="debut">
+								N°
+							</th>
+							<th class="designation">
+								Désignation
+							</th>
+							<th>
+								PU € HT
+							</th>
+						</tr>
+						<?php
+						$tabvide = 1;
+					}
+					?>
 					<tr>
 						<td>
-							<?php
-								$compteur++;
-								echo $compteur;
-							?>
+							<?php echo $compteur; ?>
 						</td>
 						<td>
 							<?php
-								//DESIGNATION
-								echo 'designation';
-							?>
-						</td>
-				 		<td>
-							<?php
-								//PRIX HT
-								echo 42;
-							?>
+								$fami = sisi_la_famille('5');
+								echo $fami;
+							//echo $prodinfo['description']; ?>
 						</td>
 						<td>
-							<?php
-								//CHOIX
-							?>
-							<input type="checkbox" name="options[]" value="modele_devis_choix">
-							<br/>
+							<?php echo $prodinfo['prix_publique']; ?>
 						</td>
 					</tr>
-					<tr class="total_fin">
-					</tr>
-				</table>
-			</div>
-		</center>
-	</div>
-</div>
+				<?php
+				}
+			}
+			?>
+		</table>
+		<br/>
+		<br/>

@@ -4,8 +4,8 @@ $Yaka = Yaka_connexion();
 include('fun_creation_modele.php');
 if(isset($_POST['modele_name']))
 {
-	$SESSION['modele_name'] = $_POST['modele_name'];
-	echo $SESSION['modele_name'];
+	$_SESSION['modele_name'] = $_POST['modele_name'];
+	//echo $_SESSION['modele_name'];
 }
 
 if(!isset($_POST['modele_name']) || ($_POST['modele_name'] == ''))
@@ -21,11 +21,12 @@ else
 {
 	if(!isset($_POST['edit_modele_name']))
 	{
-		$requete = $bdd->query('SELECT * FROM modele WHERE nom_modele="' . $SESSION['modele_name'] . '"');
+		$requete = $bdd->query('SELECT * FROM modele WHERE nom_modele="' . $_SESSION['modele_name'] . '"');
 		if($donneex = $requete->fetch())
 		{
-			if($donneex['nom_modele'] == $SESSION['modele_name'])
+			if($donneex['nom_modele'] == $_SESSION['modele_name'])
 			{
+				//echo $_SESSION['modele_name'];
 			?>
 				<center>
 					Le nom de modele de devis existe déjà; voulez-vous le modifier?
@@ -49,6 +50,8 @@ else
 		}
 		else
 		{
+			$stmt = $bdd->prepare("INSERT INTO modele (nom_modele, date_modele) VALUES ('".$_SESSION['modele_name']."', '".date("Y-m-d")."')");
+			$stmt->execute();
 			include('part_creation_modele_devis_3.php');
 		}
 	}
