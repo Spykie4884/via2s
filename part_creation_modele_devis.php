@@ -1,7 +1,7 @@
 ﻿<?php
 	$bdd = bdd_connexion();
 	$Yaka = Yaka_connexion();
-	$_SESSION['modele_name'] = '';
+	$_SESSION['modele_name'] = ' ';
 ?>
 <div id="content">
 	<div id="content_item">

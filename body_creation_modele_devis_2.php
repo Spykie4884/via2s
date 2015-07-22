@@ -1,6 +1,7 @@
 ﻿<?php
 	$page = 'Créer modèle';
 ?>
+<br/>
 <div id="menu_vertical">
 	<ul>
 		<?php

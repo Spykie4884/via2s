@@ -32,7 +32,10 @@ function va_chercher($BASE, $TABLE, $ARG1, $ARG2)
 //RETOURNE LE NOM DE LA FAMILLE
 function sisi_la_famille($val_id)
 {
-	$la_famille = va_chercher('Yaka', 'famille', 'id', $val_id);
+	//nclude('fun_BDD_connexion.php');
+	$Yaka = Yaka_connexion();
+	//$la_famille = va_chercher('Yaka', 'famille', 'id', $val_id);
+	$la_famille = $Yaka->query('SELECT * FROM famille WHERE id ="'. $val_id .'"');
 	
 	return $la_famille;
 }

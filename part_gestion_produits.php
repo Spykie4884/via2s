@@ -197,14 +197,7 @@
 							<select name="famille" id="famille">
 								<option value=" "></option>
 								<?php
-								try
-								{
-									$Yaka = new PDO("sqlsrv:Server=192.168.100.5\SQLYAKA;Database=base_test_2015", "sa", "SecurityMaster08");
-								}
-								catch (Exception $e)
-								{
-									echo 'Yaka pas connecté';
-								}
+								$Yaka = Yaka_connexion();
 								$fami = $Yaka->prepare('SELECT description FROM famille');
 								$fami->execute(array(''));
 								while($ret = $fami->fetch())
@@ -223,14 +216,7 @@
 							<select name="niveau" id="niveau">
 								<option value=" "></option>
 								<?php
-								try
-								{
-									$Yaka = new PDO("sqlsrv:Server=192.168.100.5\SQLYAKA;Database=base_test_2015", "sa", "SecurityMaster08");
-								}
-								catch (Exception $e)
-								{
-									echo 'Yaka pas connecté';
-								}
+								$Yaka = Yaka_connexion();
 								$sfami = $Yaka->prepare('SELECT description FROM sous_famille');
 								$sfami->execute(array(''));
 								while($ret = $sfami->fetch())

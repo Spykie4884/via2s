@@ -1,11 +1,12 @@
-﻿<?php
+﻿<div id="content">
+	<div id="content_item">
+<?php
 $bdd = bdd_connexion();
 $Yaka = Yaka_connexion();
 include('fun_creation_modele.php');
 if(isset($_POST['modele_name']))
 {
 	$_SESSION['modele_name'] = $_POST['modele_name'];
-	//echo $_SESSION['modele_name'];
 }
 
 if(!isset($_POST['modele_name']) || ($_POST['modele_name'] == ''))
@@ -62,3 +63,5 @@ else
 	}
 }
 ?>
+	</div>
+</div>

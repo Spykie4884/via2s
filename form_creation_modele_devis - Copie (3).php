@@ -7,34 +7,10 @@ $compteur2 = 0;
 $compteur3 = 0;
 
 $t=0;
-
-$_SESSION['TOTAL_DEVIS'] = 0;
-
-//if(//update les qte
-//$dev_prod_qte =  $bdd->prepare('SELECT * FROM devis_produit_qte WHERE id_modele = "'. $affdon['nom_modele'] .'" AND id_produit = "'. $info_mod['prod_id'] .'"');
-//$dev_prod_qte->execute();
-
 ?>
-
-
-
-
-
-
-<form method="post" action="creation_devis.php">
+<form method="post" action="creation_modele_devis_3.php">
 	<table class="tab">
 		<?php
-		if (!empty($_POST['options']))
-		{
-			$stmt = $bdd->prepare("INSERT INTO donnee_modele (nom_modele, ref_produit) VALUES (:nom_modele, :ref_produit)");
-			$stmt->bindParam(':nom_modele', $_SESSION['modele_name']);
-			$stmt->bindParam(':ref_produit', $id_produit);
-			foreach($_POST['options'] as $checkU)
-			{
-				$id_produit = $checkU;
-				$stmt->execute();
-			}
-		}
 		if (!empty($_POST['soupr']))
 		{
 			$stmtt = $bdd->prepare("DELETE FROM donnee_modele WHERE ref_produit = :ref");
@@ -51,43 +27,17 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 			$donnee_modele =  $bdd->prepare('SELECT * FROM donnee_modele WHERE nom_modele = "'. $_SESSION['modele_name'] .'"');
 			$donnee_modele->execute();
 			
-			$affiches = $Yaka->prepare("SELECT produit.description as proddescrip, famille.description as famidescrip,  sous_famille.description as ssfamidescrip, produit.prix_unitaire as puht, produit.id as prod_id, produit.prix_publique as pvht
+			$affiches = $Yaka->prepare("SELECT produit.description as proddescrip, famille.description as famidescrip,  sous_famille.description as ssfamidescrip, produit.prix_unitaire as puht, produit.id as prod_id
 											FROM produit, famille, sous_famille
 											WHERE famille.id = produit.id_famille AND sous_famille.id = produit.id_sous_famille ORDER BY famidescrip, ssfamidescrip");
+			
 			$affiches->execute();
-			
-			
-			
 			while($info_mod = $affiches->fetch())
 			{
-
-					$donnee_modele =  $bdd->prepare('SELECT * FROM donnee_modele WHERE ref_produit = "'. $info_mod['prod_id'] .'" AND nom_modele = "'. $_SESSION['modele_name'] .'"');
-					$donnee_modele->execute();
-					if($affdon = $donnee_modele->fetch())
-					{
-						$dev_prod_qte =  $bdd->prepare('SELECT * FROM devis_produit_qte WHERE donnee_name = "'. $affdon['nom_modele'] .'"');
-						//$dev_prod_qte =  $bdd->prepare('SELECT * FROM devis_produit_qte WHERE id_donnee_modele = "'. "ikhnsmdgnr" .'"');
-						$dev_prod_qte->execute();
-						$qte = $dev_prod_qte->fetch();
-						echo "ICI >>>>>>>>>>>>>>>>>>>>>>>>>>>>" . $qte['quantite'] . "<<<<<<<<<<<<<<<<<";
-						echo "ICI >>>>>>>>>>>>>>>>>>>>>>>>>>>>" . $affdon['id_donne_modele'] . "<<<<<<<<<<<<<<<<<";
-					//CALCULE DE LA QTE, S/TOTAL ET TOTAL
-
-					//QTE
-					$QTE = 42;
-
-					//S/TOTAL
-					$sstotal = $QTE * $info_mod['puht'];
-
-					//TOTAL
-					$_SESSION['TOTAL_DEVIS'] += $sstotal;
-
-
-
-
-
-
-
+				$donnee_modele =  $bdd->prepare('SELECT nom_modele FROM donnee_modele WHERE ref_produit = "'. $info_mod['prod_id'] .'" AND nom_modele = "'. $_SESSION['modele_name'] .'"');
+				$donnee_modele->execute();
+				if($affdon = $donnee_modele->fetch())
+				{
 					if($tabvide == 0)
 					{
 						$meme_nom = $info_mod;
@@ -100,13 +50,9 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 								Désignation
 							</th>
 							<th>
-								PU <br/>€ HT
+								PU € HT
 							</th>
 							<th>
-								QTE
-							</th>
-							<th>
-								Changer QTE
 							</th>
 						</tr>
 						<?php
@@ -125,8 +71,6 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 							</td>
 							<td>
 							</td>
-							<td>
-							</td>
 						</tr>
 						<tr>
 							<td>
@@ -140,9 +84,6 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 								<?php
 									echo '<p style="text-align:left; text-decoration:underline; text-indent: 15px;">'.$info_mod['ssfamidescrip'].'</p>';
 								?>
-							</td>
-							<td>
-							</td>
 							</td>
 							<td>
 							</td>
@@ -172,30 +113,6 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 							</td>
 							<td>
 							</td>
-							</td>
-							<td>
-							</td>
-							<td>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<?php
-									$compteur2++;
-									$compteur3 = 0;
-									echo $compteur .".". $compteur2;
-								?>
-							</td>
-							<td>
-								<?php
-									echo '<p style="text-align:left; text-decoration:underline; text-indent: 15px;">'.$info_mod['ssfamidescrip'].'</p>';
-								?>
-							</td>
-							<td>
-							</td>
-							</td>
-							<td>
-							</td>
 							<td>
 							</td>
 						</tr>
@@ -217,9 +134,6 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 								<?php
 									echo '<p style="text-align:left; text-decoration:underline; text-indent: 15px;">'.$info_mod['ssfamidescrip'].'</p>';
 								?>
-							</td>
-							<td>
-							</td>
 							</td>
 							<td>
 							</td>
@@ -248,18 +162,12 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 						</td>
 						<td>
 							<?php
-								echo $qte['quantite'];
-								//echo '1';
+								echo '<input type="checkbox" name="soupr[]" value="' . $info_mod['prod_id'] . '">';
 							?>
-						</td>
-						<td>
-							<p><input type="number" name="<?php echo $info_mod['prod_id']; ?>" /></p>
 						</td>
 					</tr>
 					<?php
 				}
-				else
-					echo "pas de fletch";
 			}
 		}
 		?>
@@ -267,10 +175,7 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 	<table>
 		<tr>
 			<td style="text-align:center; font-weight: bold;">
-				<input id="submit" type="submit" value="Mise à jour du devis" name="maj_devis">
-			</td>
-			<td style="text-align:center; font-weight: bold;">
-				<input id="submit" type="submit" value="Valider un devis" name="valid_devis">
+				<input id="submit" type="submit" value="Supprimer les choix" name="add_to_modele">
 			</td>
 		</tr>
 	</table>
