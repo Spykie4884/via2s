@@ -39,6 +39,12 @@ function sisi_la_famille($val_id)
 	
 	return $la_famille;
 }
+function affiche_id($t)
+{
+	$Yaka = Yaka_connexion();
+	$la_famille = $Yaka->query('SELECT * FROM produit WHERE reference_part_number ="'. $t .'"');
+	return $la_famille;
+}
 /*
 function sisi_la_sous_famille($val_id)
 {

@@ -24,6 +24,7 @@
 // RETOURNE LA REQUETTE
 function Success_connect($donneex)
 {
+	$_SESSION['id_client'] = $donneex['id'];
 	$_SESSION['ref_client'] = $donneex['ref_client'];
 	$_SESSION['user_name'] = $donneex['user_name'];
 	$_SESSION['user_Fname'] = $donneex['user_Fname'];

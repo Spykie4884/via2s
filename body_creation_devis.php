@@ -1,6 +1,7 @@
 ﻿<?php
 	$page = 'Creation devis';
 ?>
+<br/>
 <div id="menu_vertical">
 	<ul>
 		<?php

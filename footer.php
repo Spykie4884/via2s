@@ -7,7 +7,7 @@
 	<div id="mentions_legales">
 		<div class="mention_legal">
 			<?php
-				echo "© <span class=\"strong_via2s\">VIA2S</span> 2013 – Tous droits réservés";
+				echo "© <span class=\"strong_via2s\">VIA2S</span> 2015 – Tous droits réservés";
 			?>
 		</div>
 		<div class="mention_legal2">

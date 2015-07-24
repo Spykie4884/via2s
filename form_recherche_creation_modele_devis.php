@@ -17,16 +17,34 @@ if (((isset($_POST['descrip'])) && ($_POST['descrip'] != ''))
 			if ($row = $recherche->fetch())
 			{
 			?>
-				<table class="cote" width="100%">
+				<table class="tab" style="text-align:center; border-color ; border-style ; border-width;">
+					<!--
 					<thead>
 						<tr>
-							<th class="entete">Réf</th>
-							<th class="entete">Nom</th>
-							<th class="entete">Prix à l'unité</th>
-							<th class="entete">Famille</th>
-							<th class="entete">Edit</th>
+							<th>Réf</th>
+							<th>Nom</th>
+							<th>Prix à l'unité</th>
+							<th>Famille</th>
+							<th>Edit</th>
 						</tr>
 					</thead>
+					-->
+					<tr class="tete" style="background-color: #E6E6FF">
+							<th class="debut" style="background-color: #E6E6FF">
+								Index
+							</th>
+							<th class="designation" style="background-color: #E6E6FF">
+								Désignation
+							</th>
+							<th style="background-color: #E6E6FF">
+								PU € HT
+							</th>
+							<th style="background-color: #E6E6FF">
+								Famille
+							</th>
+							<th style="background-color: #E6E6FF">
+							</th>
+					</tr>
 					<tbody>
 						<?php
 						$valid_prod = $Yaka->prepare('SELECT * FROM View_produits_actifs WHERE id_produit LIKE :idprod');

@@ -10,24 +10,24 @@ $t=0;
 
 $_SESSION['TOTAL_DEVIS'] = 0;
 
-//if(//update les qte
 //$dev_prod_qte =  $bdd->prepare('SELECT * FROM devis_produit_qte WHERE id_modele = "'. $affdon['nom_modele'] .'" AND id_produit = "'. $info_mod['prod_id'] .'"');
 //$dev_prod_qte->execute();
 
 ?>
 
-
-
-
-
-
 <form method="post" action="creation_devis.php">
 	<table class="tab">
 		<?php
+		if(isset($_SESSION['modele_name']))
+		{
+			$_SESSION['modele_name'] = $_SESSION['client_modele'];
+		}
 		if (!empty($_POST['options']))
 		{
+			
+			
 			$stmt = $bdd->prepare("INSERT INTO donnee_modele (nom_modele, ref_produit) VALUES (:nom_modele, :ref_produit)");
-			$stmt->bindParam(':nom_modele', $_SESSION['modele_name']);
+			$stmt->bindParam(':nom_modele', $_SESSION['client_modele']);
 			$stmt->bindParam(':ref_produit', $id_produit);
 			foreach($_POST['options'] as $checkU)
 			{
@@ -69,8 +69,8 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 						//$dev_prod_qte =  $bdd->prepare('SELECT * FROM devis_produit_qte WHERE id_donnee_modele = "'. "ikhnsmdgnr" .'"');
 						$dev_prod_qte->execute();
 						$qte = $dev_prod_qte->fetch();
-						echo "ICI >>>>>>>>>>>>>>>>>>>>>>>>>>>>" . $qte['quantite'] . "<<<<<<<<<<<<<<<<<";
-						echo "ICI >>>>>>>>>>>>>>>>>>>>>>>>>>>>" . $affdon['id_donne_modele'] . "<<<<<<<<<<<<<<<<<";
+						//echo "ICI >>>>>>>>>>>>>>>>>>>>>>>>>>>>" . $qte['quantite'] . "<<<<<<<<<<<<<<<<<";
+						//echo "ICI >>>>>>>>>>>>>>>>>>>>>>>>>>>>" . $affdon['id_donne_modele'] . "<<<<<<<<<<<<<<<<<";
 					//CALCULE DE LA QTE, S/TOTAL ET TOTAL
 
 					//QTE
@@ -83,7 +83,10 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 					$_SESSION['TOTAL_DEVIS'] += $sstotal;
 
 
-
+					if(isset($_POST[$info_mod['prod_id']]))//update les qte
+					{
+						echo "qte insert";
+					}
 
 
 
@@ -91,6 +94,7 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 					if($tabvide == 0)
 					{
 						$meme_nom = $info_mod;
+						echo '<h3 style="tewxt-align: center">'.$_SESSION['nom_devis'].'</h3>';
 						?>
 						<tr class="tete">
 							<th class="debut">
@@ -249,7 +253,6 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 						<td>
 							<?php
 								echo $qte['quantite'];
-								//echo '1';
 							?>
 						</td>
 						<td>
@@ -258,8 +261,6 @@ $_SESSION['TOTAL_DEVIS'] = 0;
 					</tr>
 					<?php
 				}
-				else
-					echo "pas de fletch";
 			}
 		}
 		?>

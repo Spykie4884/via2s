@@ -21,6 +21,21 @@ else
 			$Yaka = Yaka_connexion();
 			if(isset($_POST['client_modele']) && isset($_POST['nom_nom_devis']) && $_POST['client_modele'] != ' ' && $_POST['nom_nom_devis'] != '')
 			{
+				$_SESSION['nom_devis'] = $_POST['nom_nom_devis'];
+				$_SESSION['client_modele'] = $_POST['client_modele'];
+
+				$donnee_modele =  $bdd->prepare('SELECT id FROM modele WHERE nom_modele = "'. $_SESSION['client_modele'] .'"');
+				$donnee_modele->execute();
+				if($rox = $donnee_modele->fetch())
+				{
+					$stmt = $bdd->prepare("INSERT INTO devis_client (nom_devis, id_modele, id_client) VALUES (:nom_devis, :id_modele, :id_client)");
+					//echo "nom devis : " . $_SESSION['nom_devis'] . " Id Modele : " . $rox['id'] . " Id client : " . $_SESSION['id_client'] . "<br/>";
+					$stmt->bindParam(':nom_devis', $_SESSION['nom_devis']);
+					$stmt->bindParam(':id_modele', $rox['id']);
+					$stmt->bindParam(':id_client', $_SESSION['id_client']);
+					$stmt->execute();
+					//echo "insert reussit";
+				}
 				include('form_creation_devis.php');
 			}
 			else

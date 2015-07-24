@@ -28,6 +28,8 @@ function ligne_tableau_recherche($valid_prod)
 			$_SESSION['prix_publique_produit'] = $row['prix_publique'];
 			$_SESSION['famille_produit'] = $ret['description'];
 			echo '<input type="checkbox" name="check_list[]" value="' . $_SESSION['reference_part_number_produit'] . '"><br>';
+			/*$t = affiche_id($id_produit);
+			echo ">>>>>>".$t;*/
 			//echo '<input type="checkbox" name="check_list[]" value="value 4">';
 			echo "</td>
 			</tr>";
