@@ -1,0 +1,38 @@
+.text_title
+{
+	font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	color:#0863CE;
+}
+.text_sous_title
+{
+	font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	color:#0863CE;
+}
+.img-responsive.img-center {
+  margin: 0 auto;
+}
+.text_style
+{
+	font-family: 0.8em arial,sans-serif;
+	color:#1D1D1D;
+}
+.text_blue_gras
+{
+	font-family: Arial Black,Arial Bold,Gadget,sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+	color:#0863CE;
+}

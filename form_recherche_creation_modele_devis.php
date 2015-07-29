@@ -82,7 +82,7 @@ if (((isset($_POST['descrip'])) && ($_POST['descrip'] != ''))
 						while($row = $recherche->fetch())
 						{
 							$valid_prod->execute(array(':idprod' => $row['id'] . '%'));
-							$act = $valid_prod->fetch();
+							$actif = $valid_prod->fetch();
 							if($actif['actif'] == 'Oui')
 							{
 								$fam->execute(array(':idfam' => $row['id_famille']));

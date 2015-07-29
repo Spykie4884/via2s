@@ -139,7 +139,7 @@ else
 						</tr>
 		<?php
 		//SSFAMILLE
-		/*
+		?>
 						<tr>
 							<td style="border: 1px solid black; border-right-style: hidden; background-color: #E6E6FF;">
 								<?php
@@ -165,7 +165,7 @@ else
 							</td>
 						</tr>
 						<?php
-			*/
+			
 						$tabvide = 1;
 					}
 					if($meme_nom['famidescrip'] != $info_mod['famidescrip'])
@@ -177,7 +177,7 @@ else
 							<td style="border: 1px solid black; border-right-style: hidden; background-color: #E6E6FF;">
 								<?php
 									$compteur++;
-									//$compteur2 = 0;
+									$compteur2 = 0;
 									$compteur3 = 0;
 									echo $compteur .".". $compteur2;
 								?>
@@ -201,7 +201,7 @@ else
 			
 			<?php
 		//SSFAMILLE
-		/*
+		?>
 						<tr>
 							<td style="border: 1px solid black; border-right-style: hidden; background-color: #E6E6FF;">
 								<?php
@@ -227,7 +227,7 @@ else
 							</td>
 						</tr>
 						<?php
-		*/
+		
 					}
 					if($meme_nom['ssfamidescrip'] != $info_mod['ssfamidescrip'])
 					{
@@ -235,7 +235,7 @@ else
 		?>
 		<?php
 		//SSFAMILLE
-		/*
+		
 						?>
 						<tr>
 							<td style="border: 1px solid black; border-right-style: hidden; background-color: #E6E6FF;">
@@ -262,15 +262,15 @@ else
 							</td>
 						</tr>
 						<?php
-			*/
+			
 					}
 					?>
 					<tr>
 						<td style="border: 1px solid black;">
 							<?php
 								$compteur3++;
-								//echo $compteur .".". $compteur2 .".". $compteur3;
-								echo $compteur .".". $compteur3;
+								echo $compteur .".". $compteur2 .".". $compteur3;
+								//echo $compteur .".". $compteur3;
 							?>
 						</td>
 						<td style="border: 1px solid black;">
@@ -303,7 +303,7 @@ else
 								//TOTAL HT
 								echo $QTE*$info_mod['puht'];
 							?>
-						</td style="border: 1px solid black;">
+						</td>
 						<td style="border: 1px solid black;">
 							<?php
 								echo '<input type="checkbox" name="soupr[]" value="' . $info_mod['prod_id'] . '">';
