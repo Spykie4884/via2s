@@ -1,9 +1,18 @@
-﻿<?php
-	//LIMITATION DES DROITS D'ACCES A LA PAGE
-	include('fun_droit_acces.php');
-	acces_page_limited();
-	
-	
-	$page = 'Liste devis';
-	include('part_liste_devis.php');
+<?php
+if(isset($_SESSION['user_id']))
+{
+?>
+	<div class="col-sm-10" style="background-color: white; height: 80%">
+		<div class="container">
+			<h2 class="text_title" style="margin-left:35%">LISTE DEVIS</h2>
+			<?php
+				$bdd = bdd_Connexion();
+				$liste_devis = $bdd->prepare("SELECT * FROM devis WHERE id_user ='" . $_SESSION['user_id'] . "'");
+			?>
+		</div>
+	</div>
+<?php
+}
+else
+	include('body_connexion_require.php');
 ?>

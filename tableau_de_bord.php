@@ -1,0 +1,24 @@
+<?php
+include('first_head.php');
+?>
+<html>
+	<head>
+		<title>VIA2S - VIDÉO INTRUSION ACCESS SUPERVISION SERVICES</title>
+		<?php
+		include('head.php');
+		?>
+	</head>
+	<body class="row">
+		<div class="col-sm-12">
+			<?php
+			include('fun_connexion.php');
+			include('hnavbar.php');
+			?>
+		</div>
+		<?php
+		include('vnavbar.php');
+		include('body_tableau_de_bord.php');
+		include('footer.php');
+		?>
+	</body>
+</html>

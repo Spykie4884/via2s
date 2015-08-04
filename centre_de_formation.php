@@ -1,53 +1,24 @@
-﻿<?php
-	//PAGE CENTRE DE FORMATION
-	
-	// INCLUE LES PAGES DE:
-	// CONNEXIONS AUX BDD
-	// LE SESSION_ACTIVE
-	// LES COOKIES
-	include('first_include.php');
+<?php
+include('first_head.php');
+include('fun_index.php');
 ?>
 <html>
 	<head>
-		<title>VIA2S</title>
+		<title>VIA2S - VIDÉO INTRUSION ACCESS SUPERVISION SERVICES</title>
 		<?php
-			// INCLUE LE CSS
-			include('head.php');
+		include('head.php');
 		?>
 	</head>
-	<body>
-		<div id="main">
-			<div id="site_content">
-				<div id="site_heading">
-					<?php
-						//INCLUDE LE BANDEAU
-						include('bandeau.php');
-					?>
-					<div id="header">
-						<div id="menubar">
-							<hr/>
-							<?php
-								//INCLUDE LES MENUS DU HAUT
-								include('menu.php');
-								include('sous_menu_groupe.php');
-								include('sous_menu_contact.php');
-							?>
-						</div>
-						<script>afficherSousMenu('sousmenu-accueil');</script>
-						<?php
-							// INCLUE LES PAGES DE
-							// CONNEXION RAPIDE
-							// LA FILE D'ARIANE
-							include('sous_bandeau.php');
-						?>
-					</div>
-				</div>
-				</br>
-					<?php
-						include('body_centre_de_formation.php');
-						include('footer.php');
-					?>
-			</div>
+	<body class="row">
+		<div class="col-sm-12">
+			<?php
+			include('hnavbar.php');
+			?>
 		</div>
+		<?php
+		include('vnavbar.php');
+		include('body_centre_de_formation.php');
+		include('footer.php');
+		?>
 	</body>
 </html>
